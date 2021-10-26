@@ -6,23 +6,23 @@ Description:      "Measure Report for the FHIR elements that are used to report 
 
 
 
-* Identifier 1..*
+* identifier 1..*
 
-* Type 1..1
+* type 1..1
 
-* Measure 1..*
+* measure 1..*
 
 * subject 0..1 
 //* subject.reference = refernce(patient|Group)
 
 * date 1..1
 
-* Period 1..1
+* period 1..1
 
 * reporter 1..1 
 //* reporter.reference = Reference(Organization)
 
-* Evaluated Resources = reference (IHE_QORE_Composition)
+* evaluated Resources = reference (IHE_QORE_Composition)
 
 
 
