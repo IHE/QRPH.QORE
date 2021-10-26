@@ -10,8 +10,6 @@ Description:      "Measure Report for the FHIR elements that are used to report 
 
 * type 1..1
 
-* measure 1..*
-
 * subject 0..1 
 //* subject.reference = refernce(patient|Group)
 
