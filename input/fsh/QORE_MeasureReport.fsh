@@ -20,7 +20,7 @@ Description:      "Measure Report for the FHIR elements that are used to report 
 * reporter 1..1 
 //* reporter.reference = Reference(Organization)
 
-* evaluated Resources = reference (IHE_QORE_Composition)
+* evaluated Resources = Reference(IHE_QORE_Composition)
 
 
 
