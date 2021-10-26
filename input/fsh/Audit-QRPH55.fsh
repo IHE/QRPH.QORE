@@ -2,7 +2,8 @@ Profile:        AuditQueryforEMSQualityDataConsumer
 Parent:         AuditEvent
 Id:             IHE.QORE.QueryforEMSQualityData.Audit.DataConsumer
 Title:          "Audit Event for Query for EMS Quality Data Transaction at Data Consumer"
-Description:    "Defines constraints on the AuditEvent Resource to record when a Query for EMS Quality Data Transaction happens, as recorded by the Data Consumer."
+Description:    """
+Defines constraints on the AuditEvent Resource to record when a Query for EMS Quality Data Transaction happens, as recorded by the Data Consumer.
 
 - Query event
 - shall have the source as itself
@@ -10,7 +11,8 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 - shall have a document responder agent
 - may have user, app, organization agent(s)
 - shall have a patient entity
-- shall have a the query parameters"
+- shall have a the query parameters
+"""
 * modifierExtension 0..0
 * type = DCM#110112 "Query"
 * action = #E
@@ -58,7 +60,8 @@ Profile:        AuditQueryforEMSQualityDataResponder
 Parent:         AuditQueryforEMSQualityDataConsumer
 Id:             IHE.QORE.QueryforEMSQualityData.Audit.DataResponder
 Title:          "Audit Event for Query for EMS Quality Data Transaction at Data Responder"
-Description:    "Defines constraints on the AuditEvent Resource to record when a Query for EMS Quality Data Transaction happens, as recorded by the Data Rsponder."
+Description:    """
+Defines constraints on the AuditEvent Resource to record when a Query for EMS Quality Data Transaction happens, as recorded by the Data Rsponder.
 
 - Query event
 - shall have the source as itself
@@ -66,7 +69,8 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 - shall have a document responder agent
 - may have user, app, organization agent(s)
 - shall have a patient entity
-- shall have a the query parameters"
+- shall have a the query parameters
+"""
 * modifierExtension 0..0
 * type = DCM#110112 "Query"
 * action = #E
@@ -82,7 +86,7 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * agent ^slicing.rules = #open
 * agent ^slicing.description = "consumer, responder, and possibly the user who participated"
 * agent contains 
-	DataConsumer 1..1 and [chnage nemase]]]] 
+	DataConsumer 1..1 and 
 	DataResponder 1..1 
 	// may be many including app identity, user identity, etc
 * agent[DataConsumer].type = DCM#110153 "Source Role ID"

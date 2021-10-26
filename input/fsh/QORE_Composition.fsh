@@ -2,17 +2,18 @@ Profile:   IHE_QORE_Composition
 Parent: Composition
 Id:             IHE.QRPH.QORE.Composition
 Title: "Quality Outcomes Reporting for EMS"
-Description:      "composition of the FHIR elements that are used to build the FHIR Composition for the Qulaity Outcomes Report."
-
-* text MS 0..1
-* status MS 1..1
+Description:      """
+composition of the FHIR elements that are used to build the FHIR Composition for the Qulaity Outcomes Report.
+"""
+* text MS
+* status 1..1
 
 * subject 1..*
 * subject only Reference(Patient|Group)
 * subject MS
 
 * encounter 1..* MS
-* encounter only Reference(Encounter | IHE_PCS_Encounter)
+* encounter only Reference(Encounter or IHE_PCS_Encounter)
 * date MS
 * author MS
 * author ^short = "Who and/or what authored the QORE"
@@ -31,17 +32,17 @@ Description:      "composition of the FHIR elements that are used to build the F
 * section[past_medical_history_section] ^short = "Patient Summary Section"
 * section[past_medical_history_section].text MS
 * section[past_medical_history_section].entry MS
-* section[past_medical_history_section].entry Reference(CompositionUvIps http://hl7.org/fhir/uv/ips/StructureDefinition/Composition-uv-ips or ConditionUvIps http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips)
+* section[past_medical_history_section].entry only Reference( Composition-uv-ips or  Condition-uv-ips)
 * section[past_medical_history_section].entry ^slicing.discriminator.type = #profile
 * section[past_medical_history_section].entry ^slicing.discriminator.path = "resolve()"
 * section[past_medical_history_section].entry ^slicing.rules = #open
 * section[past_medical_history_section].entry ^short = "The Patient Summary with the relevant past medical History elements"
 * section[past_medical_history_section].entry ^definition = "An International Patient Summary (IPS) document is an electronic health record extract containing essential healthcare information about a subject of care. The IPS dataset is minimal and non-exhaustive; specialty-agnostic and condition-independent; but still clinically relevant. As specified in EN 17269 and ISO/DIS 27269, it is designed for supporting the use case scenario for ‘unplanned, cross border care’, but it is not limited to it. It is intended to be international, i.e., to provide generic solutions for global application beyond a particular region or country."
 * section[past_medical_history_section].entry contains 
-	Patient_Summary 1..* MS
+	Patient_Summary 1..* MS and
 	past_medical_history_entry 0..* 
 * section[past_medical_history_section].entry[Patient_Summary] only Reference(CompositionUvIps)
-* section[past_medical_history_section].entry[past_medical_history_entry] only Reference(Condition | ConditionUvIps http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips)
+* section[past_medical_history_section].entry[past_medical_history_entry] only Reference(Condition or ConditionUvIps http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips)
 
 
 * section[chief_complaint_and_reason_for_visit_section] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
