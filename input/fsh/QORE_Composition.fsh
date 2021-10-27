@@ -356,6 +356,6 @@ This profile is based on the ClinicalDocument profile."""
 * section[chief_complaint].entry contains
 	chief_complaint_narrative 0..* MS and
 	chief_complaint_coded_value 0..* MS
-* section[chief_complaint].entry[chief_complaint_narrative] only text
+* section[chief_complaint].entry[chief_complaint_narrative].type = Narrative
 * section[chief_complaint].entry[chief_complaint_coded_value] only reference(encounter)
 // NOTE: reference coded value shall be the Encounter.diagnosis where Encounter.diagnosis.use = CC"Chief complaint"
