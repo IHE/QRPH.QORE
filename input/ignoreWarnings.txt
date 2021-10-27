@@ -3,4 +3,11 @@
 # IHE valueset that is not yet a real valueset
 Code System URI 'urn:ihe:event-type-code' is unknown so the code cannot be validated
 
+## Cannot Inherit from the ITI Audit Resources, but reusing the message format. 
+Error: Slice named DataConsumer already exists on element AuditEvent.agent of AuditQueryforEMSQualityDataResponder
+Error: Slice named patient already exists on element AuditEvent.entity of AuditQueryforEMSQualityDataResponder
+Error: Slice named queryParameters already exists on element AuditEvent.entity of AuditQueryforEMSQualityDataResponder
+Error: Slice named DataConsumer already exists on element AuditEvent.agent of AuditSendEMSQualityDataSender
+Error: Slice named DataSender already exists on element AuditEvent.agent of AuditSendEMSQualityDataSender
+
 
