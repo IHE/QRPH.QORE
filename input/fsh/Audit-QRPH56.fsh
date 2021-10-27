@@ -60,7 +60,7 @@ Expression: "$this.who = %resource.source.observer"
 Severity: #error
 
 Profile:        AuditSendEMSQualityDataSender
-Parent:         AuditSendEMSQualityDataConsumer
+Parent:         AuditEvent
 Id:             IHE.QORE.SendEMSQualityData.Audit.DataSender
 Title:          "Audit Event for Send EMS Quality Data Transaction at the DataSender"
 Description:    """
@@ -97,12 +97,12 @@ wiht the group resiicre replace patients make separate report for group and for 
 	DataSender 1..1 
 	// may be many including app identity, user identity, etc
 * agent[DataSender].type = DCM#110153 "Source Role ID"
-* agent[DataConsumer].who 1..1
-* agent[DataConsumer] obeys val-audit-source
-* agent[DataConsumer].network 1..1
-* agent[DataSender].type = DCM#110152 "Destination Role ID"
 * agent[DataSender].who 1..1
 * agent[DataSender].network 1..1
+* agent[DataSender] obeys val-audit-source
+* agent[DataConsumer].who 1..1
+* agent[DataConsumer].network 1..1
+* agent[DataConsumer].type = DCM#110152 "Destination Role ID"
 * entity 2..2
 * entity ^slicing.discriminator.type = #pattern
 * entity ^slicing.discriminator.path = "type"

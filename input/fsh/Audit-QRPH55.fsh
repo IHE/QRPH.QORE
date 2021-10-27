@@ -57,7 +57,7 @@ Defines constraints on the AuditEvent Resource to record when a Query for EMS Qu
 
 
 Profile:        AuditQueryforEMSQualityDataResponder
-Parent:         AuditQueryforEMSQualityDataConsumer
+Parent:         AuditEvent
 Id:             IHE.QORE.QueryforEMSQualityData.Audit.DataResponder
 Title:          "Audit Event for Query for EMS Quality Data Transaction at Data Responder"
 Description:    """
