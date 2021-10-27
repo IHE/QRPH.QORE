@@ -1,8 +1,8 @@
-Profile:   IHE_QORE_Composition
-Parent: http://hl7.org/fhir/uv/ips/StructureDefinition/Composition-uv-ips
-Id:             IHE.QRPH.QORE.Composition
+Profile: IHE_QORE_Composition
+Parent: CompositionUvIps
+Id: IHE.QRPH.QORE.Composition
 Title: "Quality Outcomes Reporting for EMS"
-Description:      """
+Description:  """
 composition of the FHIR elements that are used to build the FHIR Composition for the Qulaity Outcomes Report.
 """
 * text MS
