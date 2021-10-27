@@ -56,8 +56,11 @@ pages:
   volume-1.md:
     title: 1:XX. Profile Volume 1
     generation: markdown
-  domain-YY.md:
-    title: 2:3.YY Transaction one [Domain-YY]
+  QRPH-55.md:
+    title: 2:3.55 Transaction one [QRPH-55]
+    generation: markdown
+  QRPH-56.md:
+    title: 2:3.56 Transaction two [QRPH-56]
     generation: markdown
   testplan.md:
     title: "Test Plan"
@@ -77,6 +80,7 @@ menu:
     Security Considerations: volume-1.html#security-considerations
     Cross-Profile Considerations: volume-1.html#grouping
   Volume 2:
-    "Transaction one [Domain-YY]": domain-YY.html
+    "Transaction one [Domain-55]": domain-55.html
+    "Transaction two [Domain-56]": domain-56.html
   Test Plan: testplan.html
   Artifacts: artifacts.html
