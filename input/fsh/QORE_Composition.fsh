@@ -346,7 +346,7 @@ This profile is based on the ClinicalDocument profile."""
 * section[chief_complaint] ^definition = "Chief complaint records the patient's primary complaint."
 * section[chief_complaint].code = $loinc#10154-3
 * section[chief_complaint].code MS
-* section[chief_complaint].text 1..1 MS
+* section[chief_complaint].text MS
 * section[chief_complaint].entry only Reference(Encounter or DocumentReference)
 * section[chief_complaint].entry MS
 * section[chief_complaint].entry ^slicing.discriminator.type = #profile
@@ -357,5 +357,7 @@ This profile is based on the ClinicalDocument profile."""
 * section[chief_complaint].entry contains 
 	chief_complaint_narrative 0..* MS
 	chief_complaint_coded_value 0..* MS
+* section[chief_complaint].entry[chief_complaint_narrative] only text
+* section[chief_complaint].entry[chief_complaint_coded_value] only Reference(Encounter) 
 
 // NOTE: reference coded value shall be the Encounter.diagnosis where Encounter.diagnosis.use = CC"Chief complaint"
