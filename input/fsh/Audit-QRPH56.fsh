@@ -2,14 +2,16 @@ Profile:        AuditSendEMSQualityDataConsumer
 Parent:         AuditEvent
 Id:             IHE.QORE.SendEMSQualityData.Audit.DataConsumer
 Title:          "Audit Event for Send EMS Quality Data Transaction at Data Consumer"
-Description:    "Defines constraints on the AuditEvent Resource to record when a Send EMS Quality Data Transaction happens at the Data Consumer."
+Description:    """
+Defines constraints on the AuditEvent Resource to record when a Send EMS Quality Data Transaction happens at the Data Consumer.
 - Import event
 - shall have source of DataSender
 - shall have a document source agent
 - shall have a document recipient agent
 - may have user, app, organization agent(s)
 - shall have a patient entity
-- shall have a submission set identity entity"
+- shall have a submission set identity entity
+"""
 * modifierExtension 0..0
 * type = DCM#110107 "Import"
 * action = #C
@@ -61,7 +63,8 @@ Profile:        AuditSendEMSQualityDataSender
 Parent:         AuditSendEMSQualityDataConsumer
 Id:             IHE.QORE.SendEMSQualityData.Audit.DataSender
 Title:          "Audit Event for Send EMS Quality Data Transaction at the DataSender"
-Description:    "Defines constraints on the AuditEvent Resource to record when a Send EMS Quality Data Query Transaction happens at the Data Consumer."
+Description:    """
+Defines constraints on the AuditEvent Resource to record when a Send EMS Quality Data Query Transaction happens at the Data Consumer.
 
 chnage the import to export and the save to export. source and destinations witht eh actors... 
 
@@ -73,7 +76,8 @@ wiht the group resiicre replace patients make separate report for group and for 
 - shall have a document recipient agent
 - may have user, app, organization agent(s)
 - shall have a patient entity
-- shall have a submission set identity entity"
+- shall have a submission set identity entity
+"""
 * modifierExtension 0..0
 * type = DCM#110106 "Export"
 * action = #R
