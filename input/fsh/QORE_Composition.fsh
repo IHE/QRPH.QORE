@@ -113,7 +113,8 @@ This profile is based on the ClinicalDocument profile."""
     sectionPlanOfCare ..1 and
     sectionSocialHistory ..1 and
     sectionPregnancyHx ..1 and
-    sectionAdvanceDirectives ..1
+    sectionAdvanceDirectives ..1 and
+	chief_complaint ..1
 * section[sectionMedications] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[sectionMedications] ^extension.valueString = "Section"
 * section[sectionMedications] ^short = "IPS Medication Summary Section"
@@ -344,17 +345,5 @@ This profile is based on the ClinicalDocument profile."""
 * section[chief_complaint] ^short = "Chief Complaint"
 * section[chief_complaint] ^definition = "Chief complaint records the patient's primary complaint."
 * section[chief_complaint].code = $loinc#10154-3
-* section[chief_complaint].code MS
-* section[chief_complaint].entry only Reference(Encounter or DocumentReference)
-* section[chief_complaint].entry MS
-* section[chief_complaint].entry ^slicing.discriminator.type = #profile
-* section[chief_complaint].entry ^slicing.discriminator.path = "resolve()"
-* section[chief_complaint].entry ^slicing.rules = #open
-* section[chief_complaint].entry ^short = "Narrative description of the patient's chief complaint."
-* section[chief_complaint].entry ^definition = "Chief complaint records the patient's primary complaint (the patient's own description)."
-* section[chief_complaint].entry contains 
-	chief_complaint_narrative 0..* MS
-	chief_complaint_coded_value 0..* MS
-* section[chief_complaint].entry[chief_complaint_narrative] only text
-* section[chief_complaint].entry[chief_complaint_coded_value] only Reference(Encounter)
+
 // NOTE: reference coded value shall be the Encounter.diagnosis where Encounter.diagnosis.use = CC"Chief complaint"
