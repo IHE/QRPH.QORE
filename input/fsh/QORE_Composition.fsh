@@ -1,5 +1,5 @@
 Profile:   IHE_QORE_Composition
-Parent: Composition
+Parent: http://hl7.org/fhir/uv/ips/StructureDefinition/Composition-uv-ips
 Id:             IHE.QRPH.QORE.Composition
 Title: "Quality Outcomes Reporting for EMS"
 Description:      """
