@@ -353,9 +353,12 @@ This profile is based on the ClinicalDocument profile."""
 * section[chief_complaint].entry ^slicing.rules = #open
 * section[chief_complaint].entry ^short = "Narrative description of the patient's chief complaint."
 * section[chief_complaint].entry ^definition = "Chief complaint records the patient's primary complaint."
-* section[chief_complaint].entry contains
-	chief_complaint_narrative 0..* MS and
-	chief_complaint_coded_value 0..* MS
-* section[chief_complaint].entry[chief_complaint_narrative].type = Narrative
+* section[chief_complaint].entry contains chief_complaint_coded_value 0..* MS
 * section[chief_complaint].entry[chief_complaint_coded_value] only reference(encounter)
 // NOTE: reference coded value shall be the Encounter.diagnosis where Encounter.diagnosis.use = CC"Chief complaint"
+* section[chief_complaint].entry ^slicing.discriminator.type = #narrative
+* section[chief_complaint].entry ^slicing.discriminator.path = "resolve()"
+* section[chief_complaint].entry ^slicing.rules = #open
+* section[chief_complaint].entry ^short = "Narrative description of the patient's chief complaint."
+* section[chief_complaint].entry ^definition = "Chief complaint records the patient's primary complaint (in the patient's own words)."
+* section[chief_complaint].entry contains chief_complaint_narrative 0..* MS
