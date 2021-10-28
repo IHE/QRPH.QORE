@@ -473,7 +473,7 @@ This profile is based on the ClinicalDocument profile."""
 * section[discharge_disposition].code = $loinc#55128-3
 * section[discharge_disposition].code MS
 * section[discharge_disposition].text 1.. MS
-* section[discharge_disposition].entry only Reference(Encounter)
+* section[discharge_disposition].entry
 * section[discharge_disposition].entry MS
 * section[discharge_disposition].entry ^slicing.discriminator.type = #value
 * section[discharge_disposition].entry ^slicing.discriminator.path = "resolve()"
