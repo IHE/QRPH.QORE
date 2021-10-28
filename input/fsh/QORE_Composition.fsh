@@ -357,3 +357,37 @@ This profile is based on the ClinicalDocument profile."""
 * section[chief_complaint].entry contains chief_complaint_coded_value 0..* MS
 * section[chief_complaint].entry[chief_complaint_coded_value] only Reference(Encounter)
 // NOTE: reference coded value shall be the Encounter.diagnosis where Encounter.diagnosis.use = CC"Chief complaint"
+
+* section[reason_for_visit] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[reason_for_visit] ^extension.valueString = "Section"
+* section[reason_for_visit] ^short = "Reason for Visit"
+* section[reason_for_visit] ^definition = "This section records the patient's reason for their visit (the provider's description of the reason for visit). Local policy determines whether the information is divided into two sections or recorded in one section serving both purposes."
+* section[reason_for_visit].code = $loinc#29299-5
+* section[reason_for_visit].code MS
+* section[reason_for_visit].text 1.. MS
+* section[reason_for_visit].entry only Reference(Encounter or DocumentReference)
+* section[reason_for_visit].entry MS
+* section[reason_for_visit].entry ^slicing.discriminator.type = #profile
+* section[reason_for_visit].entry ^slicing.discriminator.path = "resolve()"
+* section[reason_for_visit].entry ^slicing.rules = #open
+* section[reason_for_visit].entry ^short = "The patient's reason for their visit."
+* section[reason_for_visit].entry ^definition = "The patient's reason for their visit (the provider's description of the reason for visit)."
+* section[reason_for_visit].entry contains chief_complaint_coded_value 0..* MS
+* section[reason_for_visit].entry[reason_for_visit_coded_value] only Reference(Encounter)
+
+* section[chief_complaint_and_reason_for_visit] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[chief_complaint_and_reason_for_visit] ^extension.valueString = "Section"
+* section[chief_complaint_and_reason_for_visit] ^short = "Chief Complaint and Reason for Visit"
+* section[chief_complaint_and_reason_for_visit] ^definition = "Chief Complaint and Reason for Visit Section. This section records the patient's chief complaint (the patient's own description) and/or the reason for the patient's visit (the provider's description of the reason for visit). Local policy determines whether the information is divided into two sections or recorded in one section serving both purposes."
+* section[chief_complaint_and_reason_for_visit].code = $loinc#46239-0
+* section[chief_complaint_and_reason_for_visit].code MS
+* section[chief_complaint_and_reason_for_visit].text 1.. MS
+* section[chief_complaint_and_reason_for_visit].entry only Reference(Encounter or DocumentReference)
+* section[chief_complaint_and_reason_for_visit].entry MS
+* section[chief_complaint_and_reason_for_visit].entry ^slicing.discriminator.type = #profile
+* section[chief_complaint_and_reason_for_visit].entry ^slicing.discriminator.path = "resolve()"
+* section[chief_complaint_and_reason_for_visit].entry ^slicing.rules = #open
+* section[chief_complaint_and_reason_for_visit].entry ^short = "Chief Complaint and Reason for Visi"
+* section[chief_complaint_and_reason_for_visit].entry ^definition = "The patient's reason for their visit (the provider's description of the reason for visit)."
+* section[chief_complaint_and_reason_for_visit].entry contains chief_complaint_coded_value 0..* MS
+* section[chief_complaint_and_reason_for_visit].entry[chief_complaint_and_reason_for_visitcoded_value] only Reference(Encounter)
