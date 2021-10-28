@@ -475,7 +475,7 @@ This profile is based on the ClinicalDocument profile."""
 * section[discharge_disposition].text 1.. MS
 * section[discharge_disposition].entry only Reference(Encounter)
 * section[discharge_disposition].entry MS
-* section[discharge_disposition].entry ^slicing.discriminator.type = #profile
+* section[discharge_disposition].entry ^slicing.discriminator.type = #value
 * section[discharge_disposition].entry ^slicing.discriminator.path = "resolve()"
 * section[discharge_disposition].entry ^slicing.rules = #open
 * section[discharge_disposition].entry ^short = "Discharge Disposition"
