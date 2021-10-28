@@ -120,7 +120,8 @@ This profile is based on the ClinicalDocument profile."""
 	admission_diagnosis ..1 and
 	admission_medications ..1 and 
 	discharge_diagnosis ..1 and
-	discharge_medications ..1
+	discharge_medications ..1 and 
+	discharge_disposition ..1
 * section[sectionMedications] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[sectionMedications] ^extension.valueString = "Section"
 * section[sectionMedications] ^short = "IPS Medication Summary Section"
@@ -395,7 +396,7 @@ This profile is based on the ClinicalDocument profile."""
 * section[chief_complaint_and_reason_for_visit].entry ^slicing.rules = #open
 * section[chief_complaint_and_reason_for_visit].entry ^short = "Chief Complaint and Reason for Visit"
 * section[chief_complaint_and_reason_for_visit].entry ^definition = "The patient's reason for their visit (the provider's description of the reason for visit)."
-* section[chief_complaint_and_reason_for_visit].entry contains chief_complaint_and_reason_for_visitcoded_value 0..* MS
+* section[chief_complaint_and_reason_for_visit].entry contains chief_complaint_and_reason_for_visit_coded_value 0..* MS
 * section[chief_complaint_and_reason_for_visit].entry[chief_complaint_and_reason_for_visit_coded_value] only Reference(Encounter)
 
 * section[admission_diagnosis] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
@@ -466,3 +467,19 @@ This profile is based on the ClinicalDocument profile."""
 * section[discharge_medications].entry contains MedicationStatement 0..* MS
 * section[discharge_medications].entry[MedicationStatement] only Reference(MedicationStatementIPS)
 
+* section[discharge_disposition] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[discharge_disposition] ^extension.valueString = "Section"
+* section[discharge_disposition] ^short = "Discharge Disposition"
+* section[discharge_disposition] ^definition = "Discharge disposition."
+* section[discharge_disposition].code = $loinc#55128-3
+* section[discharge_disposition].code MS
+* section[discharge_disposition].text 1.. MS
+* section[discharge_disposition].entry only Reference(Encounter)
+* section[discharge_disposition].entry MS
+* section[discharge_disposition].entry ^slicing.discriminator.type = #profile
+* section[discharge_disposition].entry ^slicing.discriminator.path = "resolve()"
+* section[discharge_disposition].entry ^slicing.rules = #open
+* section[discharge_disposition].entry ^short = "Discharge Disposition"
+* section[discharge_disposition].entry ^definition = "Discharge disposition."
+* section[discharge_disposition].entry contains DischargeDisposition 0..* MS
+* section[discharge_disposition].entry[DischargeDisposition] only CodeableConcept
