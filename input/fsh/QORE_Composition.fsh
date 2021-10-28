@@ -114,7 +114,9 @@ This profile is based on the ClinicalDocument profile."""
     sectionSocialHistory ..1 and
     sectionPregnancyHx ..1 and
     sectionAdvanceDirectives ..1 and
-	chief_complaint ..1
+	chief_complaint ..1 and
+	reason_for_visit ..1 and 
+	chief_complaint_and_reason_for_visit
 * section[sectionMedications] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[sectionMedications] ^extension.valueString = "Section"
 * section[sectionMedications] ^short = "IPS Medication Summary Section"
@@ -389,5 +391,5 @@ This profile is based on the ClinicalDocument profile."""
 * section[chief_complaint_and_reason_for_visit].entry ^slicing.rules = #open
 * section[chief_complaint_and_reason_for_visit].entry ^short = "Chief Complaint and Reason for Visi"
 * section[chief_complaint_and_reason_for_visit].entry ^definition = "The patient's reason for their visit (the provider's description of the reason for visit)."
-* section[chief_complaint_and_reason_for_visit].entry contains chief_complaint_coded_value 0..* MS
+* section[chief_complaint_and_reason_for_visit].entry contains chief_comtplaint_coded_value 0..* MS
 * section[chief_complaint_and_reason_for_visit].entry[chief_complaint_and_reason_for_visitcoded_value] only Reference(Encounter)
