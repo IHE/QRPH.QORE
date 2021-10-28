@@ -116,7 +116,11 @@ This profile is based on the ClinicalDocument profile."""
     sectionAdvanceDirectives ..1 and
 	chief_complaint ..1 and
 	reason_for_visit ..1 and 
-	chief_complaint_and_reason_for_visit ..1
+	chief_complaint_and_reason_for_visit ..1 and
+	admission_diagnosis ..1 and
+	admission_medications ..1 and 
+	discharge_diagnosis ..1 and
+	discharge_medications ..1
 * section[sectionMedications] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[sectionMedications] ^extension.valueString = "Section"
 * section[sectionMedications] ^short = "IPS Medication Summary Section"
@@ -461,3 +465,4 @@ This profile is based on the ClinicalDocument profile."""
 * section[discharge_medications].entry ^definition = "Hospital discharge medications defines the medications that the patient is intended to take (or stop) after discharge. This may also include a patient's prescription history and indicate the source of the medication list, for example, from a pharmacy system versus from the patient."
 * section[discharge_medications].entry contains MedicationStatement 0..* MS
 * section[discharge_medications].entry[MedicationStatement] only Reference(MedicationStatementIPS)
+
