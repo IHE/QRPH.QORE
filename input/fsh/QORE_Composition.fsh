@@ -116,7 +116,7 @@ This profile is based on the ClinicalDocument profile."""
     sectionAdvanceDirectives ..1 and
 	chief_complaint ..1 and
 	reason_for_visit ..1 and 
-	chief_complaint_and_reason_for_visit
+	chief_complaint_and_reason_for_visit ..1
 * section[sectionMedications] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[sectionMedications] ^extension.valueString = "Section"
 * section[sectionMedications] ^short = "IPS Medication Summary Section"
