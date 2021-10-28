@@ -374,7 +374,7 @@ This profile is based on the ClinicalDocument profile."""
 * section[reason_for_visit].entry ^slicing.rules = #open
 * section[reason_for_visit].entry ^short = "The patient's reason for their visit."
 * section[reason_for_visit].entry ^definition = "The patient's reason for their visit (the provider's description of the reason for visit)."
-* section[reason_for_visit].entry contains chief_complaint_coded_value 0..* MS
+* section[reason_for_visit].entry contains reason_for_visit_coded_value 0..* MS
 * section[reason_for_visit].entry[reason_for_visit_coded_value] only Reference(Encounter)
 
 * section[chief_complaint_and_reason_for_visit] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
@@ -391,5 +391,5 @@ This profile is based on the ClinicalDocument profile."""
 * section[chief_complaint_and_reason_for_visit].entry ^slicing.rules = #open
 * section[chief_complaint_and_reason_for_visit].entry ^short = "Chief Complaint and Reason for Visi"
 * section[chief_complaint_and_reason_for_visit].entry ^definition = "The patient's reason for their visit (the provider's description of the reason for visit)."
-* section[chief_complaint_and_reason_for_visit].entry contains chief_comtplaint_coded_value 0..* MS
+* section[chief_complaint_and_reason_for_visit].entry contains chief_complaint_and_reason_for_visitcoded_value 0..* MS
 * section[chief_complaint_and_reason_for_visit].entry[chief_complaint_and_reason_for_visitcoded_value] only Reference(Encounter)
