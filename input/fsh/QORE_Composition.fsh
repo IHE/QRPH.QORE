@@ -397,7 +397,6 @@ This profile is based on the ClinicalDocument profile."""
 * section[chief_complaint_and_reason_for_visit].entry ^short = "Chief Complaint and Reason for Visit"
 * section[chief_complaint_and_reason_for_visit].entry ^definition = "The patient's reason for their visit (the provider's description of the reason for visit)."
 * section[chief_complaint_and_reason_for_visit].entry contains chief_complaint_and_reason_for_visit_coded_value 0..* MS
-* section[chief_complaint_and_reason_for_visit].entry[chief_complaint_and_reason_for_visit_coded_value] only Reference(Encounter)
 
 * section[admission_diagnosis] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[admission_diagnosis] ^extension.valueString = "Section"
