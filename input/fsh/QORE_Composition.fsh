@@ -389,7 +389,75 @@ This profile is based on the ClinicalDocument profile."""
 * section[chief_complaint_and_reason_for_visit].entry ^slicing.discriminator.type = #profile
 * section[chief_complaint_and_reason_for_visit].entry ^slicing.discriminator.path = "resolve()"
 * section[chief_complaint_and_reason_for_visit].entry ^slicing.rules = #open
-* section[chief_complaint_and_reason_for_visit].entry ^short = "Chief Complaint and Reason for Visi"
+* section[chief_complaint_and_reason_for_visit].entry ^short = "Chief Complaint and Reason for Visit"
 * section[chief_complaint_and_reason_for_visit].entry ^definition = "The patient's reason for their visit (the provider's description of the reason for visit)."
 * section[chief_complaint_and_reason_for_visit].entry contains chief_complaint_and_reason_for_visitcoded_value 0..* MS
-* section[chief_complaint_and_reason_for_visit].entry[chief_complaint_and_reason_for_visitcoded_value] only Reference(Encounter)
+* section[chief_complaint_and_reason_for_visit].entry[chief_complaint_and_reason_for_visit_coded_value] only Reference(Encounter)
+
+* section[admission_diagnosis] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[admission_diagnosis] ^extension.valueString = "Section"
+* section[admission_diagnosis] ^short = "Admission Diagnosis"
+* section[admission_diagnosis] ^definition = "Hospital admission Dx Reported"
+* section[admission_diagnosis].code = $loinc#46241-6
+* section[admission_diagnosis].code MS
+* section[admission_diagnosis].text 1.. MS
+* section[admission_diagnosis].entry only Reference(Encounter or ConditionUvIps)
+* section[admission_diagnosis].entry MS
+* section[admission_diagnosis].entry ^slicing.discriminator.type = #profile
+* section[admission_diagnosis].entry ^slicing.discriminator.path = "resolve()"
+* section[admission_diagnosis].entry ^slicing.rules = #open
+* section[admission_diagnosis].entry ^short = "Admission Diagnosis"
+* section[admission_diagnosis].entry ^definition = "Hospital admission Dx Reported."
+* section[admission_diagnosis].entry contains Diagnosis 0..* MS
+* section[admission_diagnosis].entry[Diagnosis] only Reference(Encounter or ConditionUvIps)
+
+* section[admission_medications] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[admission_medications] ^extension.valueString = "Section"
+* section[admission_medications] ^short = "Admission Medications"
+* section[admission_medications] ^definition = "Admission can refer to hospital admission, long-term care admission, or home health admission."
+* section[admission_medications].code = $loinc#42346-7
+* section[admission_medications].code MS
+* section[admission_medications].text 1.. MS
+* section[admission_medications].entry only Reference(MedicationStatementIPS)
+* section[admission_medications].entry MS
+* section[admission_medications].entry ^slicing.discriminator.type = #profile
+* section[admission_medications].entry ^slicing.discriminator.path = "resolve()"
+* section[admission_medications].entry ^slicing.rules = #open
+* section[admission_medications].entry ^short = "Admission Medications"
+* section[admission_medications].entry ^definition = "Admission can refer to hospital admission, long-term care admission, or home health admission."
+* section[admission_medications].entry contains MedicationStatement 0..* MS
+* section[admission_medications].entry[MedicationStatement] only Reference(MedicationStatementIPS)
+
+* section[discharge_diagnosis] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[discharge_diagnosis] ^extension.valueString = "Section"
+* section[discharge_diagnosis] ^short = "Discharge Diagnosis"
+* section[discharge_diagnosis] ^definition = "Hospital discharge diagnosis describes the patient's relevant problems or diagnoses that occurred during the hospitalization or that need to be followed after hospitalization."
+* section[discharge_diagnosis].code = $loinc#11535-2
+* section[discharge_diagnosis].code MS
+* section[discharge_diagnosis].text 1.. MS
+* section[discharge_diagnosis].entry only Reference(Encounter or ConditionUvIps)
+* section[discharge_diagnosis].entry MS
+* section[discharge_diagnosis].entry ^slicing.discriminator.type = #profile
+* section[discharge_diagnosis].entry ^slicing.discriminator.path = "resolve()"
+* section[discharge_diagnosis].entry ^slicing.rules = #open
+* section[discharge_diagnosis].entry ^short = "Discharge Diagnosis"
+* section[discharge_diagnosis].entry ^definition = "Hospital discharge diagnosis describes the patient's relevant problems or diagnoses that occurred during the hospitalization or that need to be followed after hospitalization."
+* section[discharge_diagnosis].entry contains Diagnosis 0..* MS
+* section[discharge_diagnosis].entry[Diagnosis] only Reference(Encounter or ConditionUvIps)
+
+* section[discharge_medications] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[discharge_medications] ^extension.valueString = "Section"
+* section[discharge_medications] ^short = "Discharge Medications"
+* section[discharge_medications] ^definition = "Hospital discharge medications defines the medications that the patient is intended to take (or stop) after discharge. This may also include a patient's prescription history and indicate the source of the medication list, for example, from a pharmacy system versus from the patient."
+* section[discharge_medications].code = $loinc#10183-2
+* section[discharge_medications].code MS
+* section[discharge_medications].text 1.. MS
+* section[discharge_medications].entry only Reference(MedicationStatementIPS)
+* section[discharge_medications].entry MS
+* section[discharge_medications].entry ^slicing.discriminator.type = #profile
+* section[discharge_medications].entry ^slicing.discriminator.path = "resolve()"
+* section[discharge_medications].entry ^slicing.rules = #open
+* section[discharge_medications].entry ^short = "Discharge Medications"
+* section[discharge_medications].entry ^definition = "Hospital discharge medications defines the medications that the patient is intended to take (or stop) after discharge. This may also include a patient's prescription history and indicate the source of the medication list, for example, from a pharmacy system versus from the patient."
+* section[discharge_medications].entry contains MedicationStatement 0..* MS
+* section[discharge_medications].entry[MedicationStatement] only Reference(MedicationStatementIPS)
