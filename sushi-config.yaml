@@ -1,6 +1,6 @@
 # sushi-config.yaml is documented https://fshschool.org/docs/sushi/configuration/
 # ───────────────────────────────────────────────────
-id: IHE.QRPH.QORE
+id: ihe.qrph.qore
 canonical: http://profiles.ihe.net/QRPH/QORE
 version: 0.1.0
 name: IHE_QRPH_QORE
