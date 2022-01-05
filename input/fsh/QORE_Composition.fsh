@@ -273,7 +273,6 @@ This profile is based on the ClinicalDocument profile."""
     sectionSocialHistory ..1 and
     sectionPregnancyHx ..1 and
     sectionAdvanceDirectives ..1
-	
 * section[sectionMedications] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[sectionMedications] ^extension.valueString = "Section"
 * section[sectionMedications] ^short = "IPS Medication Summary Section"
