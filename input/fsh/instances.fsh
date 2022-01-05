@@ -46,7 +46,7 @@ Usage: #example
 //Note: $R07.9 = "Chest pain, unspecified"
 * Encounter.Diagnosis.Reference(Condition).Condition.code = $R06.02
 //Note: $R06.02 = "Shortness of breath"
-* Encounter.Diagnosis.use = $CC
+* Encounter.Diagnosis.use = $CC 
 //Note: $CC = "Chief complaint"
 
 Instance: ReasonForVisit-Narrative
