@@ -116,9 +116,15 @@ Title: "discharge_medications"
 Description: "discharge_medications"
 Usage: #example
 * section[admission_medications].entry[MedicationStatement] = Reference(MedicationStatementIPS)
-* MedicationStatementIPS.Medication[x].medication[x]:medicationReference.Reference(Medication (IPS)).Medication.code = $776556004 "Lithium citrate only product" 
-* MedicationStatementIPS.Medication[x].medication[x]:medicationReference.Reference(Medication (IPS)).Medication.code = $777067000 "Acetaminophen only product" 
-* MedicationStatementIPS.Medication[x].medication[x]:medicationReference.Reference(Medication (IPS)).Medication.code = $243670 "aspirin 81 MG Oral Tablet" 
+* MedicationStatementIPS.Medication[x].medication[x]:medicationReference.Reference(MedicationIPS).Medication.code = 
+* MedicationIPS.code = $776556004
+//Note: $776556004 = "Lithium citrate only product" 
+* MedicationStatementIPS.Medication[x].medication[x]:medicationReference.Reference(MedicationIPS).Medication.code =  
+* MedicationIPS.code = $777067000
+//Note: $777067000 = "Acetaminophen only product"
+* MedicationStatementIPS.Medication[x].medication[x]:medicationReference.Reference(MedicationIPS).Medication.code =  
+* MedicationIPS.code = $243670
+//Note: $243670 = "aspirin 81 MG Oral Tablet"
 
 
 Instance: eumfh-39-07-1-of-AllergyIntolerance
