@@ -27,7 +27,7 @@ Usage: #example
 * onsetDateTime.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
 * onsetDateTime.extension.valueCode = #unknown
 
-Instance: CheifComplaint - Narrative only 
+Instance: CheifComplaint-Narrative
 InstanceOf: cheif_complaint
 Title: "cheif_complaint: Narrative only"
 Description: "cheif_complaint: Narrative only"
@@ -35,7 +35,7 @@ Usage: #example
 * section[chief_complaint].author = Reference(Practitioner | Organization)
 * section[chief_complaint].text = "My head hurts and I am having a hard time standing"
 
-Instance: CheifComplaint - coded value
+Instance: CheifComplaint-CodedValue
 InstanceOf: cheif_complaint
 Title: "cheif_complaint: coded value"
 Description: "cheif_complaint: coded value"
@@ -46,7 +46,7 @@ Usage: #example
 * Encounter.Diagnosis.Reference(Condition).Condition.code = $R06.02 "Shortness of breath"
 * Encounter.Diagnosis.use = $CC "Chief complaint"
 
-Instance: ReasonForVisit - Narrative only 
+Instance: ReasonForVisit-Narrative
 InstanceOf: reason_for_visit
 Title: "reason_for_visit: Narrative only"
 Description: "reason_for_visit: Narrative only"
@@ -54,7 +54,7 @@ Usage: #example
 * section[reason_for_visit].author = Reference(Practitioner | Organization)
 * section[reason_for_visit].text = "My head hurts and I am having a hard time standing"
 
-Instance: ReasonForVisit - coded value
+Instance: ReasonForVisit-CodedValue
 InstanceOf: cheif_complaint
 Title: "reason_for_visit: coded value"
 Description: "reason_for_visit: coded value"
