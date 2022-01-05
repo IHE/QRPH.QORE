@@ -63,7 +63,8 @@ Description: "reason_for_visit: coded value"
 Usage: #example
 * section[reason_for_visit].author = Reference(Practitioner)
 * section[reason_for_visit].entry[reason_for_visit_coded_value] = Reference(Encounter)
-* Encounter.reasonReference.Reference(Condition).Condition.code = $R07.9 "Chest pain, unspecified"
+* Encounter.reasonReference.Reference(Condition).Condition.code = $R07.9
+//Note: $R07.9 = "Chest pain, unspecified"
 
 Instance: DischargeDisposition
 InstanceOf: discharge_disposition
