@@ -32,7 +32,7 @@ InstanceOf: cheif_complaint
 Title: "cheif_complaint: Narrative only"
 Description: "cheif_complaint: Narrative only"
 Usage: #example
-* section[chief_complaint].author = Reference(Practitioner | Organization)
+* section[chief_complaint].author = Reference(Practitioner or Organization)
 * section[chief_complaint].text = "My head hurts and I am having a hard time standing"
 
 Instance: CheifComplaint-CodedValue
@@ -41,7 +41,7 @@ Title: "cheif_complaint: coded value"
 Description: "cheif_complaint: coded value"
 Usage: #example
 * section[chief_complaint].author = Reference(Practitioner)
-* section[chief_complaint].entry[chief_complaint_coded_value] Reference(Encounter)
+* section[chief_complaint].entry[chief_complaint_coded_value] = Reference(Encounter)
 * Encounter.Diagnosis.Reference(Condition).Condition.code = $R07.9 "Chest pain, unspecified"
 * Encounter.Diagnosis.Reference(Condition).Condition.code = $R06.02 "Shortness of breath"
 * Encounter.Diagnosis.use = $CC "Chief complaint"
@@ -51,7 +51,7 @@ InstanceOf: reason_for_visit
 Title: "reason_for_visit: Narrative only"
 Description: "reason_for_visit: Narrative only"
 Usage: #example
-* section[reason_for_visit].author = Reference(Practitioner | Organization)
+* section[reason_for_visit].author = Reference(Practitioner or Organization)
 * section[reason_for_visit].text = "My head hurts and I am having a hard time standing"
 
 Instance: ReasonForVisit-CodedValue
@@ -60,7 +60,7 @@ Title: "reason_for_visit: coded value"
 Description: "reason_for_visit: coded value"
 Usage: #example
 * section[reason_for_visit].author = Reference(Practitioner)
-* section[reason_for_visit].entry[reason_for_visit_coded_value] Reference(Encounter)
+* section[reason_for_visit].entry[reason_for_visit_coded_value] = Reference(Encounter)
 * Encounter.reasonReference.Reference(Condition).Condition.code = $R07.9 "Chest pain, unspecified"
 
 Instance: DischargeDisposition
@@ -68,16 +68,18 @@ InstanceOf: discharge_disposition
 Title: "discharge_disposition"
 Description: "discharge_disposition"
 Usage: #example
-* section[discharge_disposition].entry[DischargeDisposition].CodeableConcept = $LA10325-1 "Expired"
+* section[discharge_disposition].entry[DischargeDisposition].CodeableConcept = $LA10325-1
+//Note: $LA10325-1 = "Expired"
 
 Instance: AdmissionDiagnosis
 InstanceOf: admission_diagnosis
 Title: "admission_diagnosis"
 Description: "admission_diagnosis"
 Usage: #example
-* section[admission_diagnosis].entry[Diagnosis].Reference(Condition).Condition.code = $I21.3 "Myocardial Infarction, Acute, Unspecified"
-OR 
-* section[admission_diagnosis].entry[Diagnosis].Reference(Encounter).Encounter.Diagnosis.Reference(Condition).Condition.code = $I21.3 "Myocardial Infarction, Acute, Unspecified"
+* section[admission_diagnosis].entry[Diagnosis].Reference(Condition).Condition.code = $I21.3
+//Note: $I21.3 = "Myocardial Infarction, Acute, Unspecified"
+// Note: Alternative notation 
+"""* section[admission_diagnosis].entry[Diagnosis].Reference(Encounter).Encounter.Diagnosis.Reference(Condition).Condition.code = $I21.3 "Myocardial Infarction, Acute, Unspecified""""
 * Encounter.Diagnosis.use = $AD "Admission diagnosis"
 
 Instance: DischargeDiagnosis
@@ -85,9 +87,10 @@ InstanceOf: discharge_diagnosis
 Title: "discharge_diagnosis"
 Description: "discharge_diagnosis"
 Usage: #example
-* section[discharge_diagnosis].entry[Diagnosis].Reference(Condition).Condition.code = $I25.84 "Coronary Athlerosclerosis Due to Calcified Coronary Leision"
-OR 
-* section[discharge_diagnosis].entry[Diagnosis].Reference(Encounter).Encounter.Diagnosis.Reference(Condition).Condition.code = $I25.84 "Coronary Athlerosclerosis Due to Calcified Coronary Leision"
+* section[discharge_diagnosis].entry[Diagnosis].Reference(Condition).Condition.code = $I25.84
+//Note: $I25.84 = "Coronary Athlerosclerosis Due to Calcified Coronary Leision"
+// Note: Alternative notation 
+"""* section[discharge_diagnosis].entry[Diagnosis].Reference(Encounter).Encounter.Diagnosis.Reference(Condition).Condition.code = $I25.84 "Coronary Athlerosclerosis Due to Calcified Coronary Leision""""
 * Encounter.Diagnosis.use = $DD "Discharge diagnosis"
 
 Instance: AdmissionMedications
@@ -95,7 +98,7 @@ InstanceOf: admission_medications
 Title: "admission_medications"
 Description: "admission_medications"
 Usage: #example
-* section[admission_medications].entry[MedicationStatement] only Reference(MedicationStatementIPS)
+* section[admission_medications].entry[MedicationStatement] = Reference(MedicationStatementIPS)
 * MedicationStatementIPS.Medication[x].medication[x]:medicationReference.Reference(Medication (IPS)).Medication.code = $776556004 "Lithium citrate only product" 
 * MedicationStatementIPS.Medication[x].medication[x]:medicationReference.Reference(Medication (IPS)).Medication.code = $777067000 "Acetaminophen only product" 
 
