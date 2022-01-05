@@ -24,6 +24,165 @@ composition of the FHIR elements that are used to build the FHIR Composition for
 * title ^short = "Quality Outcomes Report for EMS"
 * title ^definition = "Official human-readable label for the composition.\r\n\r\nFor this document should be \"Quality Outcomes Report for EMS\" or any equivalent translation"
 
+* section contains
+    sectionMedications 1..1 MS and
+    sectionAllergies 1..1 MS and
+    sectionProblems 1..1 MS and
+    sectionProceduresHx ..1 MS and
+    sectionImmunizations ..1 MS and
+    sectionMedicalDevices ..1 MS and
+    sectionResults ..1 MS and
+    sectionVitalSigns ..1 and
+    sectionPastIllnessHx ..1 and
+    sectionFunctionalStatus ..1 and
+    sectionPlanOfCare ..1 and
+    sectionSocialHistory ..1 and
+    sectionPregnancyHx ..1 and
+    sectionAdvanceDirectives ..1 and
+	chief_complaint ..1 and
+	reason_for_visit ..1 and 
+	chief_complaint_and_reason_for_visit ..1 and
+	admission_diagnosis ..1 and
+	admission_medications ..1 and 
+	discharge_diagnosis ..1 and
+	discharge_medications ..1 and 
+	discharge_disposition ..1
+
+* section[chief_complaint] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[chief_complaint] ^extension.valueString = "Section"
+* section[chief_complaint] ^short = "Chief Complaint"
+* section[chief_complaint] ^definition = "Chief complaint records the patient's primary complaint."
+* section[chief_complaint].code = $loinc#10154-3
+* section[chief_complaint].code MS
+* section[chief_complaint].text 1.. MS
+* section[chief_complaint].entry only Reference(Encounter or DocumentReference)
+* section[chief_complaint].entry MS
+* section[chief_complaint].entry ^slicing.discriminator.type = #profile
+* section[chief_complaint].entry ^slicing.discriminator.path = "resolve()"
+* section[chief_complaint].entry ^slicing.rules = #open
+* section[chief_complaint].entry ^short = "Coded value of the patient's chief complaint."
+* section[chief_complaint].entry ^definition = "Chief complaint records the patient's primary complaint."
+* section[chief_complaint].entry contains chief_complaint_coded_value 0..* MS
+* section[chief_complaint].entry[chief_complaint_coded_value] only Reference(Encounter)
+// NOTE: reference coded value shall be the Encounter.diagnosis where Encounter.diagnosis.use = CC"Chief complaint"
+
+* section[reason_for_visit] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[reason_for_visit] ^extension.valueString = "Section"
+* section[reason_for_visit] ^short = "Reason for Visit"
+* section[reason_for_visit] ^definition = "This section records the patient's reason for their visit (the provider's description of the reason for visit). Local policy determines whether the information is divided into two sections or recorded in one section serving both purposes."
+* section[reason_for_visit].code = $loinc#29299-5
+* section[reason_for_visit].code MS
+* section[reason_for_visit].text 1.. MS
+* section[reason_for_visit].entry only Reference(Encounter or DocumentReference)
+* section[reason_for_visit].entry MS
+* section[reason_for_visit].entry ^slicing.discriminator.type = #profile
+* section[reason_for_visit].entry ^slicing.discriminator.path = "resolve()"
+* section[reason_for_visit].entry ^slicing.rules = #open
+* section[reason_for_visit].entry ^short = "The patient's reason for their visit."
+* section[reason_for_visit].entry ^definition = "The patient's reason for their visit (the provider's description of the reason for visit)."
+* section[reason_for_visit].entry contains reason_for_visit_coded_value 0..* MS
+* section[reason_for_visit].entry[reason_for_visit_coded_value] only Reference(Encounter)
+
+* section[chief_complaint_and_reason_for_visit] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[chief_complaint_and_reason_for_visit] ^extension.valueString = "Section"
+* section[chief_complaint_and_reason_for_visit] ^short = "Chief Complaint and Reason for Visit"
+* section[chief_complaint_and_reason_for_visit] ^definition = "Chief Complaint and Reason for Visit Section. This section records the patient's chief complaint (the patient's own description) and/or the reason for the patient's visit (the provider's description of the reason for visit). Local policy determines whether the information is divided into two sections or recorded in one section serving both purposes."
+* section[chief_complaint_and_reason_for_visit].code = $loinc#46239-0
+* section[chief_complaint_and_reason_for_visit].code MS
+* section[chief_complaint_and_reason_for_visit].text 1.. MS
+* section[chief_complaint_and_reason_for_visit].entry only Reference(Encounter or DocumentReference)
+* section[chief_complaint_and_reason_for_visit].entry MS
+* section[chief_complaint_and_reason_for_visit].entry ^slicing.discriminator.type = #profile
+* section[chief_complaint_and_reason_for_visit].entry ^slicing.discriminator.path = "resolve()"
+* section[chief_complaint_and_reason_for_visit].entry ^slicing.rules = #open
+* section[chief_complaint_and_reason_for_visit].entry ^short = "Chief Complaint and Reason for Visit"
+* section[chief_complaint_and_reason_for_visit].entry ^definition = "The patient's reason for their visit (the provider's description of the reason for visit)."
+* section[chief_complaint_and_reason_for_visit].entry contains chief_complaint_and_reason_for_visit_coded_value 0..* MS
+
+* section[admission_diagnosis] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[admission_diagnosis] ^extension.valueString = "Section"
+* section[admission_diagnosis] ^short = "Admission Diagnosis"
+* section[admission_diagnosis] ^definition = "Hospital admission Dx Reported"
+* section[admission_diagnosis].code = $loinc#46241-6
+* section[admission_diagnosis].code MS
+* section[admission_diagnosis].text 1.. MS
+* section[admission_diagnosis].entry only Reference(Encounter or ConditionUvIps)
+* section[admission_diagnosis].entry MS
+* section[admission_diagnosis].entry ^slicing.discriminator.type = #profile
+* section[admission_diagnosis].entry ^slicing.discriminator.path = "resolve()"
+* section[admission_diagnosis].entry ^slicing.rules = #open
+* section[admission_diagnosis].entry ^short = "Admission Diagnosis"
+* section[admission_diagnosis].entry ^definition = "Hospital admission Dx Reported."
+* section[admission_diagnosis].entry contains Diagnosis 0..* MS
+* section[admission_diagnosis].entry[Diagnosis] only Reference(Encounter or ConditionUvIps)
+
+* section[admission_medications] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[admission_medications] ^extension.valueString = "Section"
+* section[admission_medications] ^short = "Admission Medications"
+* section[admission_medications] ^definition = "Admission can refer to hospital admission, long-term care admission, or home health admission."
+* section[admission_medications].code = $loinc#42346-7
+* section[admission_medications].code MS
+* section[admission_medications].text 1.. MS
+* section[admission_medications].entry only Reference(MedicationStatementIPS)
+* section[admission_medications].entry MS
+* section[admission_medications].entry ^slicing.discriminator.type = #profile
+* section[admission_medications].entry ^slicing.discriminator.path = "resolve()"
+* section[admission_medications].entry ^slicing.rules = #open
+* section[admission_medications].entry ^short = "Admission Medications"
+* section[admission_medications].entry ^definition = "Admission can refer to hospital admission, long-term care admission, or home health admission."
+* section[admission_medications].entry contains MedicationStatement 0..* MS
+* section[admission_medications].entry[MedicationStatement] only Reference(MedicationStatementIPS)
+
+* section[discharge_diagnosis] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[discharge_diagnosis] ^extension.valueString = "Section"
+* section[discharge_diagnosis] ^short = "Discharge Diagnosis"
+* section[discharge_diagnosis] ^definition = "Hospital discharge diagnosis describes the patient's relevant problems or diagnoses that occurred during the hospitalization or that need to be followed after hospitalization."
+* section[discharge_diagnosis].code = $loinc#11535-2
+* section[discharge_diagnosis].code MS
+* section[discharge_diagnosis].text 1.. MS
+* section[discharge_diagnosis].entry only Reference(Encounter or ConditionUvIps)
+* section[discharge_diagnosis].entry MS
+* section[discharge_diagnosis].entry ^slicing.discriminator.type = #profile
+* section[discharge_diagnosis].entry ^slicing.discriminator.path = "resolve()"
+* section[discharge_diagnosis].entry ^slicing.rules = #open
+* section[discharge_diagnosis].entry ^short = "Discharge Diagnosis"
+* section[discharge_diagnosis].entry ^definition = "Hospital discharge diagnosis describes the patient's relevant problems or diagnoses that occurred during the hospitalization or that need to be followed after hospitalization."
+* section[discharge_diagnosis].entry contains Diagnosis 0..* MS
+* section[discharge_diagnosis].entry[Diagnosis] only Reference(Encounter or ConditionUvIps)
+
+* section[discharge_medications] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[discharge_medications] ^extension.valueString = "Section"
+* section[discharge_medications] ^short = "Discharge Medications"
+* section[discharge_medications] ^definition = "Hospital discharge medications defines the medications that the patient is intended to take (or stop) after discharge. This may also include a patient's prescription history and indicate the source of the medication list, for example, from a pharmacy system versus from the patient."
+* section[discharge_medications].code = $loinc#10183-2
+* section[discharge_medications].code MS
+* section[discharge_medications].text 1.. MS
+* section[discharge_medications].entry only Reference(MedicationStatementIPS)
+* section[discharge_medications].entry MS
+* section[discharge_medications].entry ^slicing.discriminator.type = #profile
+* section[discharge_medications].entry ^slicing.discriminator.path = "resolve()"
+* section[discharge_medications].entry ^slicing.rules = #open
+* section[discharge_medications].entry ^short = "Discharge Medications"
+* section[discharge_medications].entry ^definition = "Hospital discharge medications defines the medications that the patient is intended to take (or stop) after discharge. This may also include a patient's prescription history and indicate the source of the medication list, for example, from a pharmacy system versus from the patient."
+* section[discharge_medications].entry contains MedicationStatement 0..* MS
+* section[discharge_medications].entry[MedicationStatement] only Reference(MedicationStatementIPS)
+
+* section[discharge_disposition] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[discharge_disposition] ^extension.valueString = "Section"
+* section[discharge_disposition] ^short = "Discharge Disposition"
+* section[discharge_disposition] ^definition = "Discharge disposition."
+* section[discharge_disposition].code = $loinc#55128-3
+* section[discharge_disposition].code MS
+* section[discharge_disposition].text 1.. MS
+* section[discharge_disposition].entry only Reference(Encounter)
+* section[discharge_disposition].entry MS
+* section[discharge_disposition].entry ^slicing.discriminator.type = #profile
+* section[discharge_disposition].entry ^slicing.discriminator.path = "resolve()"
+* section[discharge_disposition].entry ^slicing.rules = #open
+* section[discharge_disposition].entry ^short = "Discharge Disposition"
+* section[discharge_disposition].entry ^definition = "Discharge disposition."
+* section[discharge_disposition].entry contains DischargeDisposition 0..* MS
+* section[discharge_disposition].entry[DischargeDisposition] only Reference(Encounter)
 
 
 // Borrowed (copy-paste) October 27, 2021 -- from the "Connectathon" branch of IPS github
@@ -114,14 +273,6 @@ This profile is based on the ClinicalDocument profile."""
     sectionSocialHistory ..1 and
     sectionPregnancyHx ..1 and
     sectionAdvanceDirectives ..1 and
-	chief_complaint ..1 and
-	reason_for_visit ..1 and 
-	chief_complaint_and_reason_for_visit ..1 and
-	admission_diagnosis ..1 and
-	admission_medications ..1 and 
-	discharge_diagnosis ..1 and
-	discharge_medications ..1 and 
-	discharge_disposition ..1
 * section[sectionMedications] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[sectionMedications] ^extension.valueString = "Section"
 * section[sectionMedications] ^short = "IPS Medication Summary Section"
@@ -346,139 +497,3 @@ This profile is based on the ClinicalDocument profile."""
 * section[sectionAdvanceDirectives].entry ^definition = "Contains a narrative description or a Consent entry with information about the patient's advance directive."
 * section[sectionAdvanceDirectives].entry contains advanceDirectivesConsent 0..* MS
 * section[sectionAdvanceDirectives].entry[advanceDirectivesConsent] only Reference(Consent)
-
-* section[chief_complaint] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[chief_complaint] ^extension.valueString = "Section"
-* section[chief_complaint] ^short = "Chief Complaint"
-* section[chief_complaint] ^definition = "Chief complaint records the patient's primary complaint."
-* section[chief_complaint].code = $loinc#10154-3
-* section[chief_complaint].code MS
-* section[chief_complaint].text 1.. MS
-* section[chief_complaint].entry only Reference(Encounter or DocumentReference)
-* section[chief_complaint].entry MS
-* section[chief_complaint].entry ^slicing.discriminator.type = #profile
-* section[chief_complaint].entry ^slicing.discriminator.path = "resolve()"
-* section[chief_complaint].entry ^slicing.rules = #open
-* section[chief_complaint].entry ^short = "Coded value of the patient's chief complaint."
-* section[chief_complaint].entry ^definition = "Chief complaint records the patient's primary complaint."
-* section[chief_complaint].entry contains chief_complaint_coded_value 0..* MS
-* section[chief_complaint].entry[chief_complaint_coded_value] only Reference(Encounter)
-// NOTE: reference coded value shall be the Encounter.diagnosis where Encounter.diagnosis.use = CC"Chief complaint"
-
-* section[reason_for_visit] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[reason_for_visit] ^extension.valueString = "Section"
-* section[reason_for_visit] ^short = "Reason for Visit"
-* section[reason_for_visit] ^definition = "This section records the patient's reason for their visit (the provider's description of the reason for visit). Local policy determines whether the information is divided into two sections or recorded in one section serving both purposes."
-* section[reason_for_visit].code = $loinc#29299-5
-* section[reason_for_visit].code MS
-* section[reason_for_visit].text 1.. MS
-* section[reason_for_visit].entry only Reference(Encounter or DocumentReference)
-* section[reason_for_visit].entry MS
-* section[reason_for_visit].entry ^slicing.discriminator.type = #profile
-* section[reason_for_visit].entry ^slicing.discriminator.path = "resolve()"
-* section[reason_for_visit].entry ^slicing.rules = #open
-* section[reason_for_visit].entry ^short = "The patient's reason for their visit."
-* section[reason_for_visit].entry ^definition = "The patient's reason for their visit (the provider's description of the reason for visit)."
-* section[reason_for_visit].entry contains reason_for_visit_coded_value 0..* MS
-* section[reason_for_visit].entry[reason_for_visit_coded_value] only Reference(Encounter)
-
-* section[chief_complaint_and_reason_for_visit] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[chief_complaint_and_reason_for_visit] ^extension.valueString = "Section"
-* section[chief_complaint_and_reason_for_visit] ^short = "Chief Complaint and Reason for Visit"
-* section[chief_complaint_and_reason_for_visit] ^definition = "Chief Complaint and Reason for Visit Section. This section records the patient's chief complaint (the patient's own description) and/or the reason for the patient's visit (the provider's description of the reason for visit). Local policy determines whether the information is divided into two sections or recorded in one section serving both purposes."
-* section[chief_complaint_and_reason_for_visit].code = $loinc#46239-0
-* section[chief_complaint_and_reason_for_visit].code MS
-* section[chief_complaint_and_reason_for_visit].text 1.. MS
-* section[chief_complaint_and_reason_for_visit].entry only Reference(Encounter or DocumentReference)
-* section[chief_complaint_and_reason_for_visit].entry MS
-* section[chief_complaint_and_reason_for_visit].entry ^slicing.discriminator.type = #profile
-* section[chief_complaint_and_reason_for_visit].entry ^slicing.discriminator.path = "resolve()"
-* section[chief_complaint_and_reason_for_visit].entry ^slicing.rules = #open
-* section[chief_complaint_and_reason_for_visit].entry ^short = "Chief Complaint and Reason for Visit"
-* section[chief_complaint_and_reason_for_visit].entry ^definition = "The patient's reason for their visit (the provider's description of the reason for visit)."
-* section[chief_complaint_and_reason_for_visit].entry contains chief_complaint_and_reason_for_visit_coded_value 0..* MS
-
-* section[admission_diagnosis] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[admission_diagnosis] ^extension.valueString = "Section"
-* section[admission_diagnosis] ^short = "Admission Diagnosis"
-* section[admission_diagnosis] ^definition = "Hospital admission Dx Reported"
-* section[admission_diagnosis].code = $loinc#46241-6
-* section[admission_diagnosis].code MS
-* section[admission_diagnosis].text 1.. MS
-* section[admission_diagnosis].entry only Reference(Encounter or ConditionUvIps)
-* section[admission_diagnosis].entry MS
-* section[admission_diagnosis].entry ^slicing.discriminator.type = #profile
-* section[admission_diagnosis].entry ^slicing.discriminator.path = "resolve()"
-* section[admission_diagnosis].entry ^slicing.rules = #open
-* section[admission_diagnosis].entry ^short = "Admission Diagnosis"
-* section[admission_diagnosis].entry ^definition = "Hospital admission Dx Reported."
-* section[admission_diagnosis].entry contains Diagnosis 0..* MS
-* section[admission_diagnosis].entry[Diagnosis] only Reference(Encounter or ConditionUvIps)
-
-* section[admission_medications] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[admission_medications] ^extension.valueString = "Section"
-* section[admission_medications] ^short = "Admission Medications"
-* section[admission_medications] ^definition = "Admission can refer to hospital admission, long-term care admission, or home health admission."
-* section[admission_medications].code = $loinc#42346-7
-* section[admission_medications].code MS
-* section[admission_medications].text 1.. MS
-* section[admission_medications].entry only Reference(MedicationStatementIPS)
-* section[admission_medications].entry MS
-* section[admission_medications].entry ^slicing.discriminator.type = #profile
-* section[admission_medications].entry ^slicing.discriminator.path = "resolve()"
-* section[admission_medications].entry ^slicing.rules = #open
-* section[admission_medications].entry ^short = "Admission Medications"
-* section[admission_medications].entry ^definition = "Admission can refer to hospital admission, long-term care admission, or home health admission."
-* section[admission_medications].entry contains MedicationStatement 0..* MS
-* section[admission_medications].entry[MedicationStatement] only Reference(MedicationStatementIPS)
-
-* section[discharge_diagnosis] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[discharge_diagnosis] ^extension.valueString = "Section"
-* section[discharge_diagnosis] ^short = "Discharge Diagnosis"
-* section[discharge_diagnosis] ^definition = "Hospital discharge diagnosis describes the patient's relevant problems or diagnoses that occurred during the hospitalization or that need to be followed after hospitalization."
-* section[discharge_diagnosis].code = $loinc#11535-2
-* section[discharge_diagnosis].code MS
-* section[discharge_diagnosis].text 1.. MS
-* section[discharge_diagnosis].entry only Reference(Encounter or ConditionUvIps)
-* section[discharge_diagnosis].entry MS
-* section[discharge_diagnosis].entry ^slicing.discriminator.type = #profile
-* section[discharge_diagnosis].entry ^slicing.discriminator.path = "resolve()"
-* section[discharge_diagnosis].entry ^slicing.rules = #open
-* section[discharge_diagnosis].entry ^short = "Discharge Diagnosis"
-* section[discharge_diagnosis].entry ^definition = "Hospital discharge diagnosis describes the patient's relevant problems or diagnoses that occurred during the hospitalization or that need to be followed after hospitalization."
-* section[discharge_diagnosis].entry contains Diagnosis 0..* MS
-* section[discharge_diagnosis].entry[Diagnosis] only Reference(Encounter or ConditionUvIps)
-
-* section[discharge_medications] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[discharge_medications] ^extension.valueString = "Section"
-* section[discharge_medications] ^short = "Discharge Medications"
-* section[discharge_medications] ^definition = "Hospital discharge medications defines the medications that the patient is intended to take (or stop) after discharge. This may also include a patient's prescription history and indicate the source of the medication list, for example, from a pharmacy system versus from the patient."
-* section[discharge_medications].code = $loinc#10183-2
-* section[discharge_medications].code MS
-* section[discharge_medications].text 1.. MS
-* section[discharge_medications].entry only Reference(MedicationStatementIPS)
-* section[discharge_medications].entry MS
-* section[discharge_medications].entry ^slicing.discriminator.type = #profile
-* section[discharge_medications].entry ^slicing.discriminator.path = "resolve()"
-* section[discharge_medications].entry ^slicing.rules = #open
-* section[discharge_medications].entry ^short = "Discharge Medications"
-* section[discharge_medications].entry ^definition = "Hospital discharge medications defines the medications that the patient is intended to take (or stop) after discharge. This may also include a patient's prescription history and indicate the source of the medication list, for example, from a pharmacy system versus from the patient."
-* section[discharge_medications].entry contains MedicationStatement 0..* MS
-* section[discharge_medications].entry[MedicationStatement] only Reference(MedicationStatementIPS)
-
-* section[discharge_disposition] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
-* section[discharge_disposition] ^extension.valueString = "Section"
-* section[discharge_disposition] ^short = "Discharge Disposition"
-* section[discharge_disposition] ^definition = "Discharge disposition."
-* section[discharge_disposition].code = $loinc#55128-3
-* section[discharge_disposition].code MS
-* section[discharge_disposition].text 1.. MS
-* section[discharge_disposition].entry only Reference(Encounter)
-* section[discharge_disposition].entry MS
-* section[discharge_disposition].entry ^slicing.discriminator.type = #profile
-* section[discharge_disposition].entry ^slicing.discriminator.path = "resolve()"
-* section[discharge_disposition].entry ^slicing.rules = #open
-* section[discharge_disposition].entry ^short = "Discharge Disposition"
-* section[discharge_disposition].entry ^definition = "Discharge disposition."
-* section[discharge_disposition].entry contains DischargeDisposition 0..* MS
-* section[discharge_disposition].entry[DischargeDisposition] only Reference(Encounter)
