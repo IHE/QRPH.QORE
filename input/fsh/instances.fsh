@@ -94,7 +94,8 @@ Usage: #example
 * section[discharge_diagnosis].entry[Diagnosis].Reference(Condition).Condition.code = $I25.84
 //Note: $I25.84 = "Coronary Athlerosclerosis Due to Calcified Coronary Leision"
 // Note: Alternative notation -- section[discharge_diagnosis].entry[Diagnosis].Reference(Encounter).Encounter.Diagnosis.Reference(Condition).Condition.code = $I25.84 "Coronary Athlerosclerosis Due to Calcified Coronary Leision"
-* Encounter.Diagnosis.use = $DD "Discharge diagnosis"
+* Encounter.Diagnosis.use = $DD 
+//Note: $DD = "Discharge diagnosis"
 
 Instance: AdmissionMedications
 InstanceOf: admission_medications
@@ -102,15 +103,19 @@ Title: "admission_medications"
 Description: "admission_medications"
 Usage: #example
 * section[admission_medications].entry[MedicationStatement] = Reference(MedicationStatementIPS)
-* MedicationStatementIPS.Medication[x].medication[x]:medicationReference.Reference(Medication (IPS)).Medication.code = $776556004 "Lithium citrate only product" 
-* MedicationStatementIPS.Medication[x].medication[x]:medicationReference.Reference(Medication (IPS)).Medication.code = $777067000 "Acetaminophen only product" 
+* MedicationStatementIPS.Medication[x].medication[x]:medicationReference.Reference(MedicationIPS)
+* MedicationIPS.code = $776556004
+//Note:  $776556004 = "Lithium citrate only product"
+* MedicationStatementIPS.Medication[x].medication[x]:medicationReference.Reference(MedicationIPS)
+* MedicationIPS.code = $777067000
+//Note:  $777067000 = "Acetaminophen only product"
 
 Instance: DischargeMedications
 InstanceOf: discharge_medications
 Title: "discharge_medications"
 Description: "discharge_medications"
 Usage: #example
-* section[admission_medications].entry[MedicationStatement] only Reference(MedicationStatementIPS)
+* section[admission_medications].entry[MedicationStatement] = Reference(MedicationStatementIPS)
 * MedicationStatementIPS.Medication[x].medication[x]:medicationReference.Reference(Medication (IPS)).Medication.code = $776556004 "Lithium citrate only product" 
 * MedicationStatementIPS.Medication[x].medication[x]:medicationReference.Reference(Medication (IPS)).Medication.code = $777067000 "Acetaminophen only product" 
 * MedicationStatementIPS.Medication[x].medication[x]:medicationReference.Reference(Medication (IPS)).Medication.code = $243670 "aspirin 81 MG Oral Tablet" 
