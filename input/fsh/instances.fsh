@@ -82,8 +82,7 @@ Description: "admission_diagnosis"
 Usage: #example
 * section[admission_diagnosis].entry[Diagnosis].Reference(Condition).Condition.code = $I21.3
 //Note: $I21.3 = "Myocardial Infarction, Acute, Unspecified"
-// Note: Alternative notation 
-"""* section[admission_diagnosis].entry[Diagnosis].Reference(Encounter).Encounter.Diagnosis.Reference(Condition).Condition.code = $I21.3 "Myocardial Infarction, Acute, Unspecified""""
+// Note: Alternative notation -- section[admission_diagnosis].entry[Diagnosis].Reference(Encounter).Encounter.Diagnosis.Reference(Condition).Condition.code = $I21.3 "Myocardial Infarction, Acute, Unspecified"
 * Encounter.Diagnosis.use = $AD "Admission diagnosis"
 
 Instance: DischargeDiagnosis
@@ -93,8 +92,7 @@ Description: "discharge_diagnosis"
 Usage: #example
 * section[discharge_diagnosis].entry[Diagnosis].Reference(Condition).Condition.code = $I25.84
 //Note: $I25.84 = "Coronary Athlerosclerosis Due to Calcified Coronary Leision"
-// Note: Alternative notation 
-"""* section[discharge_diagnosis].entry[Diagnosis].Reference(Encounter).Encounter.Diagnosis.Reference(Condition).Condition.code = $I25.84 "Coronary Athlerosclerosis Due to Calcified Coronary Leision""""
+// Note: Alternative notation -- section[discharge_diagnosis].entry[Diagnosis].Reference(Encounter).Encounter.Diagnosis.Reference(Condition).Condition.code = $I25.84 "Coronary Athlerosclerosis Due to Calcified Coronary Leision"
 * Encounter.Diagnosis.use = $DD "Discharge diagnosis"
 
 Instance: AdmissionMedications
