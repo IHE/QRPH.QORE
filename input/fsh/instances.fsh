@@ -42,8 +42,10 @@ Description: "cheif_complaint: coded value"
 Usage: #example
 * section[chief_complaint].author = Reference(Practitioner)
 * section[chief_complaint].entry[chief_complaint_coded_value] = Reference(Encounter)
-* Encounter.Diagnosis.Reference(Condition).Condition.code = $R07.9 "Chest pain, unspecified"
-* Encounter.Diagnosis.Reference(Condition).Condition.code = $R06.02 "Shortness of breath"
+* Encounter.Diagnosis.Reference(Condition).Condition.code = $R07.9 
+//Note: $R07.9 = "Chest pain, unspecified"
+* Encounter.Diagnosis.Reference(Condition).Condition.code = $R06.02
+//Note: $R06.02 = "Shortness of breath"
 * Encounter.Diagnosis.use = $CC "Chief complaint"
 
 Instance: ReasonForVisit-Narrative
