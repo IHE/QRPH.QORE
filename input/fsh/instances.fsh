@@ -83,7 +83,8 @@ Usage: #example
 * section[admission_diagnosis].entry[Diagnosis].Reference(Condition).Condition.code = $I21.3
 //Note: $I21.3 = "Myocardial Infarction, Acute, Unspecified"
 // Note: Alternative notation -- section[admission_diagnosis].entry[Diagnosis].Reference(Encounter).Encounter.Diagnosis.Reference(Condition).Condition.code = $I21.3 "Myocardial Infarction, Acute, Unspecified"
-* Encounter.Diagnosis.use = $AD "Admission diagnosis"
+* Encounter.Diagnosis.use = $AD 
+//Note: $AD = "Admission diagnosis"
 
 Instance: DischargeDiagnosis
 InstanceOf: discharge_diagnosis
