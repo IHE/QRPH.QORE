@@ -56,6 +56,9 @@ pages:
   volume-1.md:
     title: 1:XX. Profile Volume 1
     generation: markdown
+  volume-4.md:
+    title: 1:XX. Profile Volume 4
+    generation: markdown
   QRPH-55.md:
     title: 2:3.55 Transaction one [QRPH-55]
     generation: markdown

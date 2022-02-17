@@ -32,7 +32,7 @@ InstanceOf: cheif_complaint
 Title: "cheif_complaint: Narrative only"
 Description: "cheif_complaint: Narrative only"
 Usage: #example
-* section[chief_complaint].author = Reference(Practitioner or Organization)
+* section[chief_complaint].author = Reference(Practitioner)
 * section[chief_complaint].text = "My head hurts and I am having a hard time standing"
 
 Instance: CheifComplaint-CodedValue
@@ -116,13 +116,13 @@ Title: "discharge_medications"
 Description: "discharge_medications"
 Usage: #example
 * section[admission_medications].entry[MedicationStatement] = Reference(MedicationStatementIPS)
-* MedicationStatementIPS.Medication[x].medication[x]:medicationReference.Reference(MedicationIPS).Medication.code = 
+* MedicationStatementIPS.Medication[x].medication[x]:medicationReference.Reference(MedicationIPS)
 * MedicationIPS.code = $776556004
 //Note: $776556004 = "Lithium citrate only product" 
-* MedicationStatementIPS.Medication[x].medication[x]:medicationReference.Reference(MedicationIPS).Medication.code =  
+* MedicationStatementIPS.Medication[x].medication[x]:medicationReference.Reference(MedicationIPS) 
 * MedicationIPS.code = $777067000
 //Note: $777067000 = "Acetaminophen only product"
-* MedicationStatementIPS.Medication[x].medication[x]:medicationReference.Reference(MedicationIPS).Medication.code =  
+* MedicationStatementIPS.Medication[x].medication[x]:medicationReference.Reference(MedicationIPS) 
 * MedicationIPS.code = $243670
 //Note: $243670 = "aspirin 81 MG Oral Tablet"
 

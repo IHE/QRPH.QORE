@@ -8,18 +8,19 @@ The Data Consumer [QRPH-55] transaction is used to query an entity for informati
 
 **Table: Actor Roles**
 
-|Actor 										   					    | Role 																												 |
-|-------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
-| [Data Responder](2_actors_and_transactions.html#Data Responder)   | The Data Responder responds to a query for EMS quality data.														 |
-| [Data Consumer](2_actors_and_transactions.html#Data Consumer)  	| The Data Consumer sends a query for the EMS quality data and receives the response returned by the Data Responder. |
+|Actor 									        | Role 																												 |
+|-----------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
+| [Data Responder](volume-1.html#DataResponder) | The Data Responder responds to a query for EMS quality data.														 |
+| [Data Consumer](volume-1.html#DataConsumer)  	| The Data Consumer sends a query for the EMS quality data and receives the response returned by the Data Responder. |
+{: .grid}
 
 ### Referenced Standards
 
 **FHIR-R4** [HL7 FHIR Release 4.0](http://www.hl7.org/FHIR/R4)
-[HL7 Version 3 Domain Analysis Model: Emergency Medical Services, Release 1] <http://www.hl7.org/implement/standards/product_brief.cfm?product_id=39>
-[HL7 Version 3 Domain Information Model; Emergency Medical Services, Release 1] <http://www.hl7.org/implement/standards/product_brief.cfm?product_id=302>
-[HL7 Version 3 Domain Analysis Model: Trauma Registry Data Submission, Release 1] http://www.hl7.org/implement/standards/product_brief.cfm?product_id=36
-[eMeasures References] https://www.heart.org/HEARTORG/Professional/MissionLifelineHomePage/Recognition/Mission-Lifeline-EMS-Recognition_UCM_308047_Article.jsp
+[HL7 Version 3 Domain Analysis Model: Emergency Medical Services, Release 1] (http://www.hl7.org/implement/standards/product_brief.cfm?product_id=39)
+[HL7 Version 3 Domain Information Model; Emergency Medical Services, Release 1] (http://www.hl7.org/implement/standards/product_brief.cfm?product_id=302)
+[HL7 Version 3 Domain Analysis Model: Trauma Registry Data Submission, Release 1] (http://www.hl7.org/implement/standards/product_brief.cfm?product_id=36)
+[eMeasures References] (https://www.heart.org/HEARTORG/Professional/MissionLifelineHomePage/Recognition/Mission-Lifeline-EMS-Recognition_UCM_308047_Article.jsp)
 
 
 ### Expected Actions
@@ -49,6 +50,7 @@ The following table defines additional search criteria that may be used to filte
 | Hospitalization.admitSource 										| Specify ambulance as the admit source (NOTE: pending value set expansion)										   		 |
 | Encounter.hospitalization.origin.managingOrganization.identifier  | Specify the specific EMS organization(s) that delivered the patient to the hospital									 |
 | Encounter.type													| Query may be constrained to inpatient or emergency patients															 |
+{: .grid}
 
 ### CapabilityStatement Resource
 
@@ -56,7 +58,7 @@ N/A
 
 ### Security Considerations
 
-See [QORE Security Considerations](3_security_considerations.html)
+See [QORE Security Considerations](volume-1.html#QORESecurityConsiderations)
 
 There must be a trusted connection between the Data Responder and Data Consumer. This will be carried out in implementation and can either be a business relationship or a secured connection done through ATNA. The Data Consumer has control of what information will be requested. The Data Responder has control of what information will be returned. This transaction may include identifiable health information, or it may leverage deidentification, see the ITI De-Identification White Paper for guidance. Depending upon the implementation and application, may constitute a disclosure of health information that requires audit, encryption, and authentication of the Data Consumer and Data Responder. For further guidance, see ITI TF-2.x: Appendix Z.8 “Mobile Security Considerations”
 Note: This assumes the approval of the current ITI-CP-1036 regarding Appendix Z.8 “Mobile Security Considerations”.

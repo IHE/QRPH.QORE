@@ -8,15 +8,15 @@ This transaction is used to send data needed to compute EMS quality measures to 
 
 **Table: Actor Roles**
 
-|Actor 										   					    | Role 																												 |
-|-------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
-| [Data Sender](2_actors_and_transactions.html#Data Responder)      | The Data sender sends quality measure outcome data to the Data Consumer. 											 |														 |
-| [Data Consumer](2_actors_and_transactions.html#Data Consumer)  	| TThe Data Consumer consumes the quality measure outcome data sent by the Data Sender. 							 |
+|Actor 								   	      | Role 															                      |
+|---------------------------------------------|---------------------------------------------------------------------------------------|
+| [Data Sender](volume-1.html#DataSender)     | The Data sender sends quality measure outcome data to the Data Consumer. 			  |														 |
+| [Data Consumer](volume-1.html#DataConsumer) | TThe Data Consumer consumes the quality measure outcome data sent by the Data Sender. |
 
 ### Referenced Standards
 
 **FHIR-R4** [HL7 FHIR Release 4.0](http://www.hl7.org/FHIR/R4)
-[eMeasures References] https://www.heart.org/HEARTORG/Professional/MissionLifelineHomePage/Recognition/Mission-Lifeline-EMS-Recognition_UCM_308047_Article.jsp
+[eMeasures References] (https://www.heart.org/HEARTORG/Professional/MissionLifelineHomePage/Recognition/Mission-Lifeline-EMS-Recognition_UCM_308047_Article.jsp)
 
 
 ### Expected Actions
@@ -37,7 +37,7 @@ N/A
 
 ### Security Considerations
 
-See [QORE Security Considerations](3_security_considerations.html)
+See [QORE Security Considerations](volume-1.html#QORESecurityConsiderations)
 
 There must be a trusted connection between the Data Sender and Data Consumer. This will be carried out in implementation and can either be a business relationship or a secured connection done through ATNA. The Data Sender has control of what information will be sent. This transaction may include identifiable health information, or it may leverage deidentification, see the ITI De-Identification White Paper for guidance. Depending upon the implementation and application, may constitute a disclosure of health information that requires audit, encryption, and authentication of the Data Consumer and Data Creator. For further guidance, see ITI TF-2.x: Appendix Z.8 “Mobile Security Considerations”
 Note: This assumes the approval of the current ITI-CP-1036 regarding Appendix Z.8 “Mobile Security Considerations”.

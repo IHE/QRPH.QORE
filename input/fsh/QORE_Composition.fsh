@@ -4,6 +4,41 @@ Id: IHE.QRPH.QORE.Composition
 Title: "Quality Outcomes Reporting for EMS"
 Description:  """
 composition of the FHIR elements that are used to build the FHIR Composition for the Qulaity Outcomes Report.
+- EMS event 
+- Hospital discharge 
+- ED discharge 
+query = all patients (or singular patient) that matches measure criteria needs.... 
+query can be mainly informed by the discharge summary e
+general 
+
+get = condition, procedures, medicaiton administered, patient age, encounter period, Hospitalization.admitSource, Encounter.hospitalization.origin.managingOrganization.identifier, Encounter.type
+push measure report 
+
+NEMSIS eOutcome query bundle : 
+
+patient - IPS patient
+allergies - IPS sectionAllergies
+procedures - sectionProceduresHx
+Medication statemnt - IPS sectionMedications
+Medications administers - IPS sectionMedications
+Cliniical impressions - Encounter -- diagnosis
+Diagnostic report - IPS sectionResults 
+encouter -- Encounter/PCS encounter_complete 
+observation -- Vitals 
+condition - IPS sectionProblems
+location -- 
+document reference 
+Device - ips sectionMedicalDevices
+Discharge summary-- 
+	chief_complaint ..1 and
+	reason_for_visit ..1 and 
+	chief_complaint_and_reason_for_visit ..1 and
+	admission_diagnosis ..1 and
+	admission_medications ..1 and 
+	discharge_diagnosis ..1 and
+	discharge_medications ..1 and 
+	discharge_disposition ..1
+
 """
 // NOTE That this is derived off of the IPS, so the IPS citeria are not replicated here, only the additional constraints
 
@@ -39,6 +74,7 @@ composition of the FHIR elements that are used to build the FHIR Composition for
     sectionSocialHistory ..1 and
     sectionPregnancyHx ..1 and
     sectionAdvanceDirectives ..1 and
+	
 	chief_complaint ..1 and
 	reason_for_visit ..1 and 
 	chief_complaint_and_reason_for_visit ..1 and
@@ -47,6 +83,29 @@ composition of the FHIR elements that are used to build the FHIR Composition for
 	discharge_diagnosis ..1 and
 	discharge_medications ..1 and 
 	discharge_disposition ..1
+	
+* functional_status_section
+* vital_signs_section 
+	
+* section[procedures_section] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+* section[procedures_section] ^extension.valueString = "Section"
+* section[procedures_section] ^short = "Chief Complaint"
+* section[procedures_section] ^definition = "Chief complaint records the patient's primary complaint."
+* section[procedures_section].code = $loinc#10154-3
+* section[procedures_section].code MS
+* section[procedures_section].text 1.. MS
+* section[procedures_section].entry only Reference(Encounter or DocumentReference)
+* section[procedures_section].entry MS
+* section[procedures_section].entry ^slicing.discriminator.type = #profile
+* section[procedures_section].entry ^slicing.discriminator.path = "resolve()"
+* section[procedures_section].entry ^slicing.rules = #open
+* section[procedures_section].entry ^short = "Coded value of the patient's chief complaint."
+* section[procedures_section].entry ^definition = "Chief complaint records the patient's primary complaint."
+* section[procedures_section].entry contains chief_complaint_coded_value 0..* MS
+* section[procedures_section].entry[chief_complaint_coded_value] only Reference(Encounter)
+//Note: for EMS cheif complaint - PCS encounter diagnosis.condition where diagnosis.use = CC
+//Note: for Hospital and ED chief complant - Discharge Sumary 
+// NOTE: reference coded value shall be the Encounter.diagnosis where Encounter.diagnosis.use = CC"Chief complaint"
 
 * section[chief_complaint] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
 * section[chief_complaint] ^extension.valueString = "Section"
@@ -64,6 +123,8 @@ composition of the FHIR elements that are used to build the FHIR Composition for
 * section[chief_complaint].entry ^definition = "Chief complaint records the patient's primary complaint."
 * section[chief_complaint].entry contains chief_complaint_coded_value 0..* MS
 * section[chief_complaint].entry[chief_complaint_coded_value] only Reference(Encounter)
+//Note: for EMS cheif complaint - PCS encounter diagnosis.condition where diagnosis.use = CC
+//Note: for Hospital and ED chief complant - Discharge Sumary 
 // NOTE: reference coded value shall be the Encounter.diagnosis where Encounter.diagnosis.use = CC"Chief complaint"
 
 * section[reason_for_visit] ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
