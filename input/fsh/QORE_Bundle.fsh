@@ -110,79 +110,10 @@ the following cardinalities follow the documentation in the QORE profile:
 * entry[Location].resource only Location
 * entry[DocumentReference].resource only DocumentReference
 * entry[DeviceUseStatement].resource only DeviceUseStatement
-* entry[VitalSigns].resource only VitalSigns
+* entry[VitalSigns].resource only Observation
 * entry[InternationalPatientSummary].resource only CompositionUvIps
-* entry[Discharge-Summary].resource only DocumentReference
-* entry[ParamedicineCareSummary].resource only IHE_PCS_Composition_CR
+* entry[DischargeSummary].resource only DocumentReference
+* entry[ParamedicineCareSummary].resource only Composition
+//Note: To be updates whenver PCS if fhinished with publication 
 
 
-/// 
-Note: Elements that could be included in the query 
-patient information 
-	age 
-	IDs 
-	birthdate 
-	addresss, etc
-Insurance infromation 
-Care plan/plan of treatment  
-relivant diagnostic teasts and reports from encounters 
-relivant procedure and reports 
-	procedures performed in ed, hospital, EMS
-Funcrtional status 
-Vital signs 
-Review of systems 
-cheif complaint 
-reason for visit 
-allergies and adverse reactions 
-Discharge medications 
-Medications administered during hospitalization, ed, and ems 
-Discharge diagnosis 
-hosital course 
-history of present illness 
-admiting dignosis
-admissions medicaitons 
-dischage disposition 
-participating providers and rolls 
-Date of discharge 
-date of admissions 
-discharge disposition
-diagnostic reports 
-active problems 
-resolved problems 
-advance directives 
-physical examinations
-discharge procedures 
-cheif complaint and reason for visit
-family hisotry 
-social history 
-hospital consultations 
-discharge instructions 
-past medical hostroy 
-times between status hsitory periods 
-chest compression rate 
-chest compression depth 
-resturn of spontanious circulation 
-bystander witnesses 
-Pain assesment 
-transport location trauma center 
-stroke assesment 
-clinical impression diagnosis of stroke 
-glood glucose vital sign/observation 
-stroke assesmetn score 
-time last known well observation 
-emergency diagnosis of stroke 
-respratory assesment 
-pecific medications administered
-estimated weight observation
-specific condition, diagnossis identified 
-suspected oversode impressions 
-altered metal status 
-specific medications that the patient is already taking 
-pulse oximitry results 
-glascow scores 
-respritory rate 
-ventilation 
-ventilation days in ED or hospital 
-adverse events from medication administration 
-
-///

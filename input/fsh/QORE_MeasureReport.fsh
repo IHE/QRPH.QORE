@@ -1,4 +1,4 @@
-Profile:   IHE_QORE_MeasureReport
+Profile:   IHE_QRPH_QORE_MeasureReport
 Parent: MeasureReport
 Id:             IHE.QRPH.QORE.MeasureReport
 Title: "Quality Outcomes Reorting for EMS Measure Report"
