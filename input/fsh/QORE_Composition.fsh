@@ -12,4 +12,4 @@ the following cardinalities follow the documentation in the QORE profile:
 * section 1..*
 * section.title = "QORE Measure Report(s)"
 * section.entry 1..*
-* section.entry only Reference(IHE_QRPH_QORE_MeasureReport_Profile)
+* section.entry only Reference(IHE_QRPH_QORE_MeasureReport)
