@@ -11,4 +11,5 @@ the following cardinalities follow the documentation in the QORE profile:
 * title = "EMS Quality Measure Report" 
 * section 1..*
 * section.title = "QORE Measure Report(s)"
+* section.entry 1..*
 * section.entry only Reference(IHE_QRPH_QORE_MeasureReport_Profile)
