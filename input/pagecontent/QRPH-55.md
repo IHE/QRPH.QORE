@@ -1,3 +1,6 @@
+//Note: I think the query peramaters might need to include the information i defined int he bundle document that will be removed later...
+// Possibly the message semantics is where the edits need to be made
+// They should be able to query for conditions.code, observations.code, procedures.code, clinical impressions, medication administration, medicationstatement, medication.code, Diagnostic reports, Location.type, Device use statements, Vital signs, Document Reference, DIscharge summaries, Paramedicine care summary, IPS, and Medical Summary.... within a specific time period 
 The Data Consumer sends a query for an EMS Quality Data to the Data Responder. 
 
 ### Scope

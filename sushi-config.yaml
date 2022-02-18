@@ -71,6 +71,12 @@ pages:
   issues.md:
     title: Open and Closed issues
     generation: markdown
+  Audit-QRPH55.md:
+    title: Query for EMS Quality Data [QRPH-55] Audit Message 
+    generation: markdown
+  Audit-QRPH56.md:
+    title: Send EMS Measure Report Data [QRPH-56] Audit Message 
+    generation: markdown
 
 menu:
   QORE Home: index.html
@@ -83,7 +89,12 @@ menu:
     Security Considerations: volume-1.html#security-considerations
     Cross-Profile Considerations: volume-1.html#grouping
   Volume 2:
-    "Transaction one [Domain-55]": domain-55.html
-    "Transaction two [Domain-56]": domain-56.html
+    "Query for EMS Quality Data QRPH-55 [QRPH-55]": QRPH-55.html
+    "Send EMS Measure Report Data [QRPH-56]": QRPH-56.html
+    Query for EMS Quality Data [QRPH-55] Audit Message: Audit-QRPH55.html
+    Send EMS Measure Report Data [QRPH-56] Audit Message: Audit-QRPH56.html
+  Volume 4: 
+    National Extensions for the United States of America (USA): volume-4.html    
   Test Plan: testplan.html
+  Open Issues: issues.html
   Artifacts: artifacts.html

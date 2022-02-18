@@ -12,16 +12,16 @@ Figure X.1-1 shows the actors directly involved in the QORE Profile and the rele
 
 * Actors
 
-  - [Data Responder](#DataResponder)
+  - [Data Responder](volume-1.html#DataResponder)
 
-  - [Data Sender](#DataSender)
+  - [Data Sender](volume-1.html#DataSender)
   
-  - [Data Consumer](#DataConsumer)
+  - [Data Consumer](volume-1.html#DataConsumer)
 
 * Transactions
 
-  - [Query for EMS Quality Data QRPH-55](QRPH-55.html)
-  - [Query for EMS Quality Data QRPH-56](QRPH-56.html)
+  - [Query for EMS Quality Data](QRPH-55.html)
+  - [Send EMS Measure Report Data](QRPH-56.html)
 
 **Table X.1-1: QORE Profile - Actors and Transactions**
 
