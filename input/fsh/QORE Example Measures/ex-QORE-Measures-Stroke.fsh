@@ -8,11 +8,11 @@ Description:      "holding typical values for a Stroke measure"
 * definition = "To measure the percentage of suspected stroke patients who had a stroke assessment performed by EMS"
 * rationale = "Stroke assessments using prehospital stroke assessment tools can screen for stroke and affect patient destinations"
 * type = #process
-* population.code [+] = #numerator
-* population.description [=] = "Number of suspected stroke patients who had a stroke assessment performed (CPSS, LAMS, etc.)"
-* population.code [+] = #denominator
-* population.description [=] = "Patients with a provider impression of stroke originating from a 911 request"
-//Note: 
+* population.code[+] = #numerator
+* population.description[=] = "Number of suspected stroke patients who had a stroke assessment performed (CPSS, LAMS, etc.)"
+* population.code[+] = #denominator
+* population.description[=] = "Patients with a provider impression of stroke originating from a 911 request"
+//Note: PCS stroke assement documented in Vital signs 
 
 Instance:   example-IHE_QORE_Stroke-02
 InstanceOf: Measure
@@ -24,11 +24,11 @@ Description:      "holding typical values for a Stroke measure"
 * definition = "Measure percentage of patients with a provider impression of stroke that have a documented blood glucose level"
 * rationale = "Hypoglycemia is a common stroke mimic and should be ruled out"
 * type = #process
-* population.code [+] = #numerator
-* population.description [=] = "Patients receiving an evaluation of blood glucose level"
-* population.code [+] = #denominator
-* population.description [=] = "Patients with a provider impression of stroke originating from a 911 request"
-//Note: 
+* population.code[+] = #numerator
+* population.description[=] = "Patients receiving an evaluation of blood glucose level"
+* population.code[+] = #denominator
+* population.description[=] = "Patients with a provider impression of stroke originating from a 911 request"
+//Note:PCS vital signs blood glucose observation 
 
 
 Instance:   example-IHE_QORE_Stroke-03
@@ -41,11 +41,11 @@ Description:      "holding typical values for a Stroke measure"
 * definition = "Measure of the percentage of patients with a positive prehospital stroke scale and transported by EMS with prenotification of a hospital verified, designated or otherwise identified as Acute Stroke-Ready or higher"
 * rationale = "Early prenotification by EMS reduces facilities' door to intervention times. Shorter door-to-intervention times have been shown to improve outcomes"
 * type = #process
-* population.code [+] = #numerator
-* population.description [=] = "Number of prenotifications prior to arrival at the hospital verified, designated or otherwise identified as Acute Stroke-Ready or higher"
-* population.code [+] = #denominator
-* population.description [=] = "Patients with a provider impression of stroke originating from a 911 request"
-//Note: 
+* population.code[+] = #numerator
+* population.description[=] = "Number of prenotifications prior to arrival at the hospital verified, designated or otherwise identified as Acute Stroke-Ready or higher"
+* population.code[+] = #denominator
+* population.description[=] = "Patients with a provider impression of stroke originating from a 911 request"
+//Note: PCS transport observation 
 
 
 Instance:   example-IHE_QORE_Stroke-04
@@ -58,11 +58,11 @@ Description:      "holding typical values for a Stroke measure"
 * definition = "Measure of the percentage of patients with a positive prehospital stroke assessment transported to a hospital verified, designated or otherwise identified as Acute Stroke-Ready or higher"
 * rationale = "Hospitals verified, designated or otherwise identified as Acute Stroke-Ready or higher are the proper destination for a suspected stroke. Transport to these facilities have been demonstrated to improve outcomes"
 * type = #outcome
-* population.code [+] = #numerator
-* population.description [=] = "Patients with a positive stroke assessment transported to a hospital verified, designated or otherwise identified as Acute Stroke-Ready or higher"
-* population.code [+] = #denominator
-* population.description [=] = "Number of suspected stroke patients who had a stroke assessment performed (CPSS, LAMS, RACE, etc.) originating from a 911 request"
-//Note: 
+* population.code[+] = #numerator
+* population.description[=] = "Patients with a positive stroke assessment transported to a hospital verified, designated or otherwise identified as Acute Stroke-Ready or higher"
+* population.code[+] = #denominator
+* population.description[=] = "Number of suspected stroke patients who had a stroke assessment performed (CPSS, LAMS, RACE, etc.) originating from a 911 request"
+//Note: PCS encounter 
 
 
 Instance:   example-IHE_QORE_Stroke-05
@@ -75,11 +75,11 @@ Description:      "holding typical values for a Stroke measure"
 * definition = "Documented LKW times for patients with a provider impression of stroke"
 * rationale = "EMS can collect this information from witnesses and/or family on-scene. The LKW is critical for determining the correct and safe in-hospital intervention"
 * type = #process
-* population.code [+] = #numerator
-* population.description [=] = "Patients with documented LKW time by EMS"
-* population.code [+] = #denominator
-* population.description [=] = "Patients with a provider impression of stroke originating from a 911 request"
-//Note: 
+* population.code[+] = #numerator
+* population.description[=] = "Patients with documented LKW time by EMS"
+* population.code[+] = #denominator
+* population.description[=] = "Patients with a provider impression of stroke originating from a 911 request"
+//Note: Functional staues last known well observation/clinical impression 
 
 
 Instance:   example-IHE_QORE_Stroke-06
@@ -92,10 +92,10 @@ Description:      "holding typical values for a Stroke measure"
 * definition = "Measures the percentage of patients that received stroke measures 1 to 5"
 * rationale = "Suspected stroke patients receiving all of the evidence-based processes may have an increased potential outcome"
 * type = #outcome
-* population.code [+] = #numerator
-* population.description [=] = "Patients receiving stroke measures 1 to 5"
-* population.code [+] = #denominator
-* population.description [=] = "Patients with a provider impression of stroke originating from a 911 request"
+* population.code[+] = #numerator
+* population.description[=] = "Patients receiving stroke measures 1 to 5"
+* population.code[+] = #denominator
+* population.description[=] = "Patients with a provider impression of stroke originating from a 911 request"
 //Note: 
 
 
@@ -109,10 +109,10 @@ Description:      "holding typical values for a Stroke measure"
 * definition = "Measures the time from LKW to arrival at a receiving facility"
 * rationale = "Reducing time from LKW to a stroke center that can intervene increases the potential for intervention to have the biggest impact"
 * type = #process
-* population.code [+] = #numerator
-* population.description [=] = "Cumulative sum of time from last known well to arrival at a hospital verified, designated or otherwise identified as Acute Stroke-Ready or higher in minutes for each patient"
-* population.code [+] = #denominator
-* population.description [=] = "Patients with a provider impression of stroke originating from a 911 request"
+* population.code[+] = #numerator
+* population.description[=] = "Cumulative sum of time from last known well to arrival at a hospital verified, designated or otherwise identified as Acute Stroke-Ready or higher in minutes for each patient"
+* population.code[+] = #denominator
+* population.description[=] = "Patients with a provider impression of stroke originating from a 911 request"
 //Note: 
 
 
@@ -126,8 +126,8 @@ Description:      "holding typical values for a Stroke measure"
 * definition = "Measures the percentage of emergency department diagnosed stroke patients who had a positive stroke assessment by EMS"
 * rationale = "Stroke assessments using prehospital stroke assessment tools can screen for stroke and affect patient destinations. Using hospital data, this measure identified the number of actual strokes that were either falsely assessed or not assessed using a prehospital stroke scale"
 * type = #process
-* population.code [+] = #numerator
-* population.description [=] = "Patients with a positive stroke assessment"
-* population.code [+] = #denominator
-* population.description [=] = "Patients with emergency department diagnosed stroke transported by EMS originating from a 911 request"
+* population.code[+] = #numerator
+* population.description[=] = "Patients with a positive stroke assessment"
+* population.code[+] = #denominator
+* population.description[=] = "Patients with emergency department diagnosed stroke transported by EMS originating from a 911 request"
 //Note: 

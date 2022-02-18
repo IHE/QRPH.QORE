@@ -8,11 +8,11 @@ Description:      "holding typical values for a Cardiac measure"
 * definition = "Percentage of OHCA cases where a bystander performed chest compressions on a patient"
 * rationale = "Early chest compressions increase the potential for resuscitation"
 * type = #process
-* population.code [+] = #numerator
-* population.description [=] = "Number of patients where Bystander CPR was being performed on arrival of first rescuer"
-* population.code [+] = #denominator
-* population.description [=] = "All Medical OCHAs in the month"
-//Note: From PCS Composition.Cardiac arrest event where observation code = 67507-4 with value = $loinc#LA9277-0, NEMSISeArrest.20
+* population.code[+] = #numerator
+* population.description[=] = "Number of patients where Bystander CPR was being performed on arrival of first rescuer"
+* population.code[+] = #denominator
+* population.description[=] = "All Medical OCHAs in the month"
+//Note: From PCS Composition.CardiacArrestEvent where observation code = 67507-4 with value = $loinc#LA9277-0, NEMSISeArrest.20
 
 Instance:   example-IHE_QORE_CPR-2
 InstanceOf: Measure
@@ -24,11 +24,11 @@ Description:      "holding typical values for a Cardiac measure"
 * definition = "Percentage of OHCA cases where a dispatcher or call taker coached a bystander in performing chest compressions"
 * rationale = "Early chest compressions increase the potential for resuscitation. Emergency Medical Dispatchers may provide over the phone CPR coaching to bystanders with the patient"
 * type = #process
-* population.code [+] = #numerator
-* population.description [=] = "Number of patients where Dispatch Coached CPR Performed"
-* population.code [+] = #denominator
-* population.description [=] = "All Medical OCHAs in the month"
-//Note: Mapping OPEN ISSUE - NEMSIS Does not have a way to hold or report this information
+* population.code[+] = #numerator
+* population.description[=] = "Number of patients where Dispatch Coached CPR Performed"
+* population.code[+] = #denominator
+* population.description[=] = "All Medical OCHAs in the month"
+//Note: Mapping OPEN ISSUE - NEMSIS Does not have a way to hold or report this information, if additional observation were to be made for this element it should be an observation on the service request 
 
 Instance:   example-IHE_QORE_CPR-3
 InstanceOf: Measure
@@ -40,11 +40,11 @@ Description:      "holding typical values for a Cardiac measure"
 * definition = "Elapsed time from PSAP notification of an OHCA and the first compression performed by a rescuer."
 * rationale = "Early chest compressions increase the potential for resuscitation."
 * type = #process
-* population.code [+] = #numerator
-* population.description [=] = "Cumulative time from PSAP notification to first rescuer initiating compressions"
-* population.code [+] = #denominator
-* population.description [=] = "All Medical OCHAs in the month"
-//Note:
+* population.code[+] = #numerator
+* population.description[=] = "Cumulative time from PSAP notification to first rescuer initiating compressions"
+* population.code[+] = #denominator
+* population.description[=] = "All Medical OCHAs in the month"
+//Note: Paramedicine care summary Encounter status history (subtype) period and the timestamp for compressions(procedures performed)
 
 
 Instance:   example-IHE_QORE_CPR-4
@@ -57,11 +57,11 @@ Description:      "holding typical values for a Cardiac measure"
 * definition = "Elapsed time from arrival of a rescuer equipped with a defibrillator to the time when the first shock is delivered"
 * rationale = "Patients with a shockable rhythm require early defibrillation to enable resuscitation"
 * type = #process
-* population.code [+] = #numerator
-* population.description [=] = "Cumulative time from first rescuer with a defibrillator arrival at the call address to delivery of the first shock"
-* population.code [+] = #denominator
-* population.description [=] = "All Medical OCHAs in the month"
-//Note:
+* population.code[+] = #numerator
+* population.description[=] = "Cumulative time from first rescuer with a defibrillator arrival at the call address to delivery of the first shock"
+* population.code[+] = #denominator
+* population.description[=] = "All Medical OCHAs in the month"
+//Note: Paramedicine care summary Encounter status history (subtype) period and the timestamp for first shock (Device use statement or Procedure)
 
 
 Instance:   example-IHE_QORE_CPR-5
@@ -74,11 +74,11 @@ Description:      "holding typical values for a Cardiac measure"
 * definition = "A measure of the average chest compression rate"
 * rationale = "Chest compressions of reliable rate and depth delivered with limited interruption increase potential for resuscitation."
 * type = #process
-* population.code [+] = #numerator
-* population.description [=] = "Average compression rate"
-* population.code [+] = #denominator
-* population.description [=] = "All Medical OCHAs in the month"
-//Note:
+* population.code[+] = #numerator
+* population.description[=] = "Average compression rate"
+* population.code[+] = #denominator
+* population.description[=] = "All Medical OCHAs in the month"
+//Note: CPR Procedure observations  (Device use statement?) 
 
 
 Instance:   example-IHE_QORE_CPR-6
@@ -91,11 +91,11 @@ Description:      "holding typical values for a Cardiac measure"
 * definition = "A measure of the average chest compression depth"
 * rationale = "Chest compressions of reliable rate and depth delivered with limited interruption increase potential for resuscitation."
 * type = #process
-* population.code [+] = #numerator
-* population.description [=] = "Average compression depth"
-* population.code [+] = #denominator
-* population.description [=] = "All Medical OCHAs in the month"
-//Note:
+* population.code[+] = #numerator
+* population.description[=] = "Average compression depth"
+* population.code[+] = #denominator
+* population.description[=] = "All Medical OCHAs in the month"
+//Note: CPR Procedure observations (Device use statement?)
 
 
 Instance:   example-IHE_QORE_CPR-7
@@ -108,11 +108,11 @@ Description:      "holding typical values for a Cardiac measure"
 * definition = "ROSC at handoff of care transition to the Emergency Department"
 * rationale = "ROSC at handoff is surrogate for survival in EMS systems unable to obtain hospital discharge data"
 * type = #process
-* population.code [+] = #numerator
-* population.description [=] = "Number of patients with ROSC >30 seconds at ED handoff"
-* population.code [+] = #denominator
-* population.description [=] = "All Medical OCHAs in the month"
-//Note: CPR2 = ROSC at ED, in ED discharge summary 
+* population.code[+] = #numerator
+* population.description[=] = "Number of patients with ROSC >30 seconds at ED handoff"
+* population.code[+] = #denominator
+* population.description[=] = "All Medical OCHAs in the month"
+//Note: CPR2 = ROSC at ED, in ED discharge summary, Paramedicine care summary e arrest observation 
 
 
 Instance:   example-IHE_QORE_CPR-8
@@ -125,10 +125,10 @@ Description:      "holding typical values for a Cardiac measure"
 * definition = "A measurement of survival to hospital discharge from OHCA with all presenting rhythms"
 * rationale = "Survival to discharge is the broadest definition of a positive patient outcome"
 * type = #outcome
-* population.code [+] = #numerator
-* population.description [=] = "Number of patients discharged from the hospital alive."
-* population.code [+] = #denominator
-* population.description [=] = "All Medical OCHAs in the month"
+* population.code[+] = #numerator
+* population.description[=] = "Number of patients discharged from the hospital alive."
+* population.code[+] = #denominator
+* population.description[=] = "All Medical OCHAs in the month"
 //Note: CPR8 = Discharge DIsposition from Hospital or ED = all values except 20	Deceased/Expired (or did not recover - Religious Non Medical Health Care Patient)
 
 
@@ -142,10 +142,10 @@ Description:      "holding typical values for a Cardiac measure"
 * definition = "Survival among patients whose cardiac arrest was witnessed by a bystander, and were found in a shockable rhythm regardless of whether they received bystander intervention"
 * rationale = "Utstein is a narrower but more focused definition based on the patient population with the highest potential for resuscitation: witnessed with a VF rhythm."
 * type = #outcome
-* population.code [+] = #numerator
-* population.description [=] = "Number of patients discharged from the hospital alive"
-* population.code [+] = #denominator
-* population.description [=] = "All witnessed Medical OCHAs with a presenting VF rhythm in the month"
+* population.code[+] = #numerator
+* population.description[=] = "Number of patients discharged from the hospital alive"
+* population.code[+] = #denominator
+* population.description[=] = "All witnessed Medical OCHAs with a presenting VF rhythm in the month"
 //Note:
 
 
@@ -159,8 +159,8 @@ Description:      "holding typical values for a Cardiac measure"
 * definition = "Patients discharged from hospital with moderate to good cerebral performance as displayed in a Cerebral Performance Criteria Score"
 * rationale = "The ultimate positive outcome for a patient is to be resuscitated with limited or no neurological deficit"
 * type = #outcome
-* population.code [+] = #numerator
-* population.description [=] = "Number of patients assessed as a CPC 1 or 2"
-* population.code [+] = #denominator
-* population.description [=] = "All Medical OCHAs survival to hospital discharge in the month"
-//Note: is the CPC evlauation a vital sign or assesment? observation = from questionair, vital sign observation
+* population.code[+] = #numerator
+* population.description[=] = "Number of patients assessed as a CPC 1 or 2"
+* population.code[+] = #denominator
+* population.description[=] = "All Medical OCHAs survival to hospital discharge in the month"
+//Note: is the CPC evlauation is an observation = from questionair, vital sign observation, SHould come from discharge studies 

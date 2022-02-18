@@ -8,11 +8,11 @@ Description:      "holding typical values for a Safety measure"
 * definition = "A rate of emergency lights and sirens responses. This includes each vehicle responding to an incident."
 * rationale = "Lights and siren responses are demonstrated to have a greater risk for patients, providers, and public. Assessing risk is an important EMS system issue. The intent of this measure is to allow an agency to assess the use of lights and sirens responses within the agency."
 * type = #process
-* population.code [+] = #numerator
-* population.description [=] = "Number of lights and sirens responses"
-* population.code [+] = #denominator
-* population.description [=] = "Number of responses originating from a 911 request"
-//Note: 
+* population.code[+] = #numerator
+* population.description[=] = "Number of lights and sirens responses"
+* population.code[+] = #denominator
+* population.description[=] = "Number of responses originating from a 911 request"
+//Note: PSC encouter Priority descriptors 
 
 
 Instance:   example-IHE_QORE_Safety-02
@@ -25,11 +25,11 @@ Description:      "holding typical values for a Safety measure"
 * definition = "A rate of emergency lights and sirens transports. This includes each vehicle transporting from an incident with one or more patients."
 * rationale = "Lights and siren responses are demonstrated to have a greater risk for patients, providers, and public. Assessing risk is an important EMS system issue. The intent of this measure is to allow an agency to assess the use of lights and sirens transports within the agency."
 * type = #process
-* population.code [+] = #numerator
-* population.description [=] = "Number of lights and sirens used during transport"
-* population.code [+] = #denominator
-* population.description [=] = "Number of patient transports by unit originating from a 911 request"
-//Note: 
+* population.code[+] = #numerator
+* population.description[=] = "Number of lights and sirens used during transport"
+* population.code[+] = #denominator
+* population.description[=] = "Number of patient transports by unit originating from a 911 request"
+//Note: PSC encounter transport priority descriptors 
 
 
 Instance:   example-IHE_QORE_Safety-03
@@ -42,11 +42,11 @@ Description:      "holding typical values for a Safety measure"
 * definition = "Measure of the number of EMS vehicle involved crashes"
 * rationale = "Crashes are one of the leading causes of injury and fatality events in EMS that create unnecessary expense, and reduce resource availability"
 * type = #process
-* population.code [+] = #numerator
-* population.description [=] = "Number of crashes"
-* population.code [+] = #denominator
-* population.description [=] = "Not defined at this time"
-//Note: 
+* population.code[+] = #numerator
+* population.description[=] = "Number of crashes"
+* population.code[+] = #denominator
+* population.description[=] = "Not defined at this time"
+//Note: Unknown Open issue 
 
 
 Instance:   example-IHE_QORE_Safety-04
@@ -59,10 +59,10 @@ Description:      "holding typical values for a Safety measure"
 * definition = "Measure of the number of EMS vehicle involved crashes resulting in injury"
 * rationale = "Crashes are one of the leading causes of injury and fatality events in EMS that create unnecessary expense, and reduce resource availability"
 * type = #process
-* population.code [+] = #numerator
-* population.description [=] = "Number of crashes resulting in injury"
-* population.code [+] = #denominator
-* population.description [=] = "Not defined at this time"
+* population.code[+] = #numerator
+* population.description[=] = "Number of crashes resulting in injury"
+* population.code[+] = #denominator
+* population.description[=] = "Not defined at this time"
 //Note: 
 
 
@@ -76,10 +76,10 @@ Description:      "holding typical values for a Safety measure"
 * definition = "Measure of the number of EMS vehicle involved crashes involving a fatality"
 * rationale = "Crashes are one of the leading causes of injury and fatality events in EMS that create unnecessary expense, and reduce resource availability"
 * type = #process
-* population.code [+] = #numerator
-* population.description [=] = "Number of fatalities"
-* population.code [+] = #denominator
-* population.description [=] = "Not defined at this time"
+* population.code[+] = #numerator
+* population.description[=] = "Number of fatalities"
+* population.code[+] = #denominator
+* population.description[=] = "Not defined at this time"
 //Note: 
 
 
@@ -93,10 +93,10 @@ Description:      "holding typical values for a Safety measure"
 * definition = "Measure of the number of EMS vehicle involved crashes"
 * rationale = "Crashes are one of the leading causes of injury and fatality events in EMS that create unnecessary expense, and reduce resource availability"
 * type = #process
-* population.code [+] = #numerator
-* population.description [=] = "Number of crashes"
-* population.code [+] = #denominator
-* population.description [=] = "Agency total vehicle miles traveled per year per 100,000 miles originating from a 911 request"
+* population.code[+] = #numerator
+* population.description[=] = "Number of crashes"
+* population.code[+] = #denominator
+* population.description[=] = "Agency total vehicle miles traveled per year per 100,000 miles originating from a 911 request"
 //Note: 
 
 
