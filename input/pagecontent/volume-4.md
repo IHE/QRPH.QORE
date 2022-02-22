@@ -19,7 +19,7 @@ This national extension document was authored under the sponsorship and supervis
 
 ##### **QORE US Volume 3 Element Constraints** 
 
-The following additional cardinality constraints apply to the Paramedicine Care document specification and entries in Table 6.3.1.D.5-1 Quality Outcomes Reporting for EMS (QORE) Document Content Module Specification. 
+The following additional cardinality constraints apply to the QORE document specification and entries in Table 6.3.1.D.5-1 Quality Outcomes Reporting for EMS (QORE) Document Content Module Specification. 
 In the US, you SHALL use FHIR structure definition US-Core-Patient in place of the patient resource identified in the QORE bundle. 
 
 **Table 3.X.1.24.I.2.1.2-1: QORE US Element Constraints**
