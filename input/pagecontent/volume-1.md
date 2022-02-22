@@ -169,7 +169,11 @@ These actors should ensure appropriate user authentication and authorization to 
 ## XX.6 QORE Cross Profile Considerations
 
 The information that is imported by the IHE PCC Paramedicine Care Summary (PCS) Profile Ccontent Cconsumer implementing the Quality Data Import Option should be leveraged to support content needed for the Quality Outcome Reporting for EMS (QORE) Data Sender or Data Responder Actors.
+
 [Audit Event for Query for EMS Quality Data Transaction at Data Consumer](https://build.fhir.org/ig/IHE/QRPH.QORE/branches/master/StructureDefinition-IHE.QORE.QueryforEMSQualityData.Audit.DataConsumer.html)
+
 [Audit Event for Query for EMS Quality Data Transaction at Data Responder](https://build.fhir.org/ig/IHE/QRPH.QORE/branches/master/StructureDefinition-IHE.QORE.QueryforEMSQualityData.Audit.DataResponder.html)
+
 [Audit Event for Send EMS Quality Data Transaction at the DataSender](https://build.fhir.org/ig/IHE/QRPH.QORE/branches/master/StructureDefinition-IHE.QORE.SendEMSQualityData.Audit.DataSender.html)
+
 [Audit Event for Send EMS Quality Data Transaction at Data Consumer](https://build.fhir.org/ig/IHE/QRPH.QORE/branches/master/StructureDefinition-IHE.QORE.SendEMSQualityData.Audit.DataConsumer.html) 
