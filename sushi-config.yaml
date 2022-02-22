@@ -71,12 +71,6 @@ pages:
   issues.md:
     title: Open and Closed issues
     generation: markdown
-  Audit-QRPH55.md:
-    title: Query for EMS Quality Data [QRPH-55] Audit Message 
-    generation: markdown
-  Audit-QRPH56.md:
-    title: Send EMS Measure Report Data [QRPH-56] Audit Message 
-    generation: markdown
 
 menu:
   QORE Home: index.html
