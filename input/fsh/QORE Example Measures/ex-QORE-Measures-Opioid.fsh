@@ -11,8 +11,10 @@ Description:      "holding typical values for an Opioid measure"
 * type = #process
 * group.population.code[+] = #numerator
 * group.population.description[+] = "all patients with a provider primary or secondary impression containing an opioid poisoning ICD-10 code who were given Narcan by EMS staff or prior to EMS arrival"
+* group.population.criteria.code[+] = #text/cql
 * group.population.code[+] = #denominator
 * group.population.description[+] = "all patients with a provider primary or secondary impression containing an opioid poisoning ICD-10 code"
+* group.population.criteria.code[+] = #text/cql
 //Note: PCS Medication administration (PCS composition)and condition of overdose (PCS encounter diagnosis) 
 
 
@@ -29,9 +31,12 @@ Description:      "holding typical values for an Opioid measure"
 * type = #outcome
 * group.population.code[+] = #numerator
 * group.population.description[+] = "all patients with a provider primary or secondary impression containing an opioid poisoning ICD-10 code or showed an “improved” response when given Narcan who were transported to a health care facility."
+* group.population.criteria.code[+] = #text/cql
 * group.population.code[+] = #denominator
 * group.population.description[+] = "all patients with a provider primary or secondary impression containing an opioid poisoning ICD-10 code or showed an “improved” response when given Narcan"
+* group.population.criteria.code[+] = #text/cql
 //Note: Destination Location (PCS encounter)
+
 
 
 Instance:   example-IHE-QORE-Opioid-03
@@ -47,8 +52,10 @@ Description:      "holding typical values for an Opioid measure"
 * type = #outcome
 * group.population.code[+] = #numerator
 * group.population.description[+] = "all patients with a provider primary or secondary impression containing an opioid poisoning ICD-10 code,  showed an “unchanged” response when given Narcan by EMS staff or prior to EMS arrival, and where given subsequent doses."
+* group.population.criteria.code[+] = #text/cql
 * group.population.code[+] = #denominator
 * group.population.description[+] = "All patients with a provider primary or secondary impression containing an opioid poisoning ICD-10 code."
+* group.population.criteria.code[+] = #text/cql
 //Note:  Medication administration PCS 
 
 
@@ -65,8 +72,10 @@ Description:      "holding typical values for an Opioid measure"
 * type = #outcome
 * group.population.code[+] = #numerator
 * group.population.description[+] = "All patients with a provider primary or secondary impression containing an opioid poisoning ICD-10 code or showed an “improved” response when given Narcan who have 2 or more similar records within a specified time period."
+* group.population.criteria.code[+] = #text/cql
 * group.population.code[+] = #denominator
 * group.population.description[+] = "all patients with a provider primary or secondary impression containing an opioid poisoning ICD-10 code or showed an “improved” response when given Narcan"
+* group.population.criteria.code[+] = #text/cql
 //Note: 
 
 
@@ -83,8 +92,10 @@ Description:      "holding typical values for an Opioid measure"
 * type = #outcome
 * group.population.code[+] = #numerator
 * group.population.description[+] = "all patients with a provider primary or secondary impression containing an opioid poisoning ICD-10 code or showed an “improved” response when given Narcan, who have a recorded combination of altered mental status, pinpoint pupils, and poor respiratory effort (RR<12)."
+* group.population.criteria.code[+] = #text/cql
 * group.population.code[+] = #denominator
 * group.population.description[+] = "all patients with a provider primary or secondary impression containing an opioid poisoning ICD-10 code or showed an “improved” response when given Narcan"
+* group.population.criteria.code[+] = #text/cql
 //Note: PCS Functional status and Vital signs observation (PCS)
 
 
@@ -101,8 +112,10 @@ Description:      "holding typical values for an Opioid measure"
 * type = #outcome
 * group.population.code[+] = #numerator
 * group.population.description[+] = "All patients with a provider primary or secondary impression containing an opioid poisoning ICD-10 code or showed an “improved” response when given Narcan who have a specific opioid recorded."
+* group.population.criteria.code[+] = #text/cql
 * group.population.code[+] = #denominator
 * group.population.description[+] = "all patients with a provider primary or secondary impression containing an opioid poisoning ICD-10 code or showed an “improved” response when given Narcan"
+* group.population.criteria.code[+] = #text/cql
 //Note: Medication statement PCS, IPS, Medical summary medications 
 
 
@@ -120,8 +133,10 @@ Description:      "holding typical values for an Opioid measure"
 * type = #outcome
 * group.population.code[+] = #numerator
 * group.population.description[+] = "All patients with an EMS provider primary or secondary impression containing an opioid poisoning ICD-10 code or showed an “improved” response when given Narcan, and a recorded pulse oximetry showing a higher pulse oximetry value when measured at facility."
+* group.population.criteria.code[+] = #text/cql
 * group.population.code[+] = #denominator
 * group.population.description[+] = "all patients with an EMS provider primary or secondary impression containing an opioid poisoning ICD-10 code or showed an “improved” response when given Narcan, and a recorded pulse oximetry"
+* group.population.criteria.code[+] = #text/cql
 //Note: PCS encounter diagnosis 
 
 
@@ -138,8 +153,10 @@ Description:      "holding typical values for an Opioid measure"
 * type = #outcome
 * group.population.code[+] = #numerator
 * group.population.description[+] = "all patients with an EMS provider primary or secondary impression containing an opioid poisoning ICD-10 code or showed an “improved” response when given Narcan, and a recorded pulse oximetry showing a higher GCS level value when measured at facility"
+* group.population.criteria.code[+] = #text/cql
 * group.population.code[+] = #denominator
 * group.population.description[+] = "all patients with an EMS provider primary or secondary impression containing an opioid poisoning ICD-10 code or showed an “improved” response when given Narcan, and a recorded GCS level."
+* group.population.criteria.code[+] = #text/cql
 //Note: ED or hospital vital signs or observation for glasgcow coma score 
 
 
@@ -156,8 +173,10 @@ Description:      "holding typical values for an Opioid measure"
 * type = #outcome
 * group.population.code[+] = #numerator
 * group.population.description[+] = "all patients with an EMS provider primary or secondary impression containing an opioid poisoning ICD-10 code or showed an “improved” response when given Narcan, and a recorded pulse oximetry showing a Respiratory rate =>12 when measured at facility."
+* group.population.criteria.code[+] = #text/cql
 * group.population.code[+] = #denominator
 * group.population.description[+] = "all patients with an EMS provider primary or secondary impression containing an opioid poisoning ICD-10 code or showed an “improved” response when given Narcan, and a recorded Respiratory rate<12."
+* group.population.criteria.code[+] = #text/cql
 //Note: ED or hospital vital signs or observation for respratory rate
 
 
@@ -174,8 +193,10 @@ Description:      "holding typical values for an Opioid measure"
 * type = #outcome
 * group.population.code[+] = #numerator
 * group.population.description[+] = "all patients with an EMS provider primary or secondary impression containing an opioid poisoning ICD-10 code or showed an “improved” response when given Narcan."
+* group.population.criteria.code[+] = #text/cql
 * group.population.code[+] = #denominator
 * group.population.description[+] = "all patients with a primary or secondary impression containing an opioid poisoning ICD-10 code or showed an “improved” response when given Narcan, who received ventilatory support within five minutes of first EMS unit’s arrival on scene."
+* group.population.criteria.code[+] = #text/cql
 //Note: PCS Procedures performed
 
 
@@ -192,7 +213,9 @@ Description:      "holding typical values for an Opioid measure"
 * type = #outcome
 * group.population.code[+] = #numerator
 * group.population.description[+] = "All patients who were given Narcan, and developed adverse effects."
+* group.population.criteria.code[+] = #text/cql
 * group.population.code[+] = #denominator
 * group.population.description[+] = "All patients who were given Narcan."
+* group.population.criteria.code[+] = #text/cql
 //Note: 
 

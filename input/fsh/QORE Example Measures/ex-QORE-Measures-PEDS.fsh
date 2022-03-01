@@ -11,8 +11,10 @@ Description:      "holding typical values for a PEDS measure"
 * type = #process
 * group.population.code[+] = #numerator
 * group.population.description[+] = "Pediatric patients with SpO2 AND RR measurement"
+* group.population.criteria.code[+] = #text/cql
 * group.population.code[+] = #denominator
 * group.population.description[+] = "Patients <15 years AND PRI/SEC Impression with (Dyspnea, unspecified, Orthopnea, Shortness of breath, or Other forms of dyspnea) originating from a 911 request"
+* group.population.criteria.code[+] = #text/cql
 //Note:  Functional Status 
 
 
@@ -29,8 +31,10 @@ Description:      "holding typical values for a PEDS measure"
 * type = #process
 * group.population.code[+] = #numerator
 * group.population.description[+] = "Pediatric patients administered (Albuterol, Accuneb, Combivent, DuoNeb, ProAir, Proventil, Ventolin or Vospire) by any means"
+* group.population.criteria.code[+] = #text/cql
 * group.population.code[+] = #denominator
 * group.population.description[+] = "Patients 2-15 years AND PRI/SEC Impression 'Asthma with exacerbation' or 'Acute bronchospasm' originating from a 911 request"
+* group.population.criteria.code[+] = #text/cql
 //Note:  Medication administration 
 
 Instance:   example-IHE-QORE-PEDS-03
@@ -46,8 +50,10 @@ Description:      "holding typical values for a PEDS measure"
 * type = #process
 * group.population.code[+] = #numerator
 * group.population.description[+] = "Weight value in kilograms or length-based weight entered"
+* group.population.criteria.code[+] = #text/cql
 * group.population.code[+] = #denominator
 * group.population.description[+] = "Patients <15 years old that received medication originating from a 911 request"
+* group.population.criteria.code[+] = #text/cql
 //Note: Observation estimated wiehgt in kilograms 
 
 
@@ -64,6 +70,8 @@ Description:      "holding typical values for a PEDS measure"
 * type = #process
 * group.population.code[+] = #numerator
 * group.population.description[+] = "Number of errors (from chart audit)"
+* group.population.criteria.code[+] = #text/cql
 * group.population.code[+] = #denominator
 * group.population.description[+] = "Patients <15 years old that received medication originating from a 911 request"
+* group.population.criteria.code[+] = #text/cql
 //Note:  Unknown Open issue 
