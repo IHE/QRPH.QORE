@@ -157,7 +157,6 @@ Description:      "holding typical values for an Opioid measure"
 * group.population[+].criteria.language = #text/cql
 * group.population[=].code = #denominator
 * group.population[=].description = "all patients with an EMS provider primary or secondary impression containing an opioid poisoning ICD-10 code or showed an “improved” response when given Narcan, and a recorded GCS level."
-* group.population.criteria.code[+] = #text/cql
 //Note: ED or hospital vital signs or observation for glasgcow coma score 
 
 
