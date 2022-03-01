@@ -117,7 +117,7 @@ Description:      "holding typical values for a Stroke measure"
 //Note: 
 
 
-Instance:   example-IHE_QORE_Stroke-07
+Instance:   example-IHE-QORE-Stroke-07
 InstanceOf: Measure
 Title: "Example of a Stroke measure"
 Description:      "holding typical values for a Stroke measure"
