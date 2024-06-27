@@ -16,10 +16,31 @@ Measure Report for the FHIR elements that are used to report the Qulaity Outcome
 """
 
 * type 1..1
+// Note this does not allow for the type we were thingking about 
 
-* date 1..1
+* date 1..1 MS
 
-* period 1..1
+* period 1..1 MS 
 
 * evaluatedResource 1..*
-// Note: The evaluated resources May include the QORE EMS Quality Data Bundle 
+// Note: The evaluated resources May include the QORE EMS Quality Data Bundle
+
+* extension contains Measures named measures 1..* MS 
+
+* reporter MS 
+
+* subject MS
+
+* group MS 
+
+* evaluatedResource MS 
+* evaluatedResource only Reference(IHE_QRPH_QORE_EMS_Quality_Data_Resource_Bundle)
+
+
+Extension: Measures
+Id: Measures
+Title: "Measures"
+Description: "What measures were calculated and are being sent"
+* ^context[+].type = #element
+* ^context[=].expression = "Measures"
+* value[x] only Reference(Measure)
