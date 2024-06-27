@@ -4,61 +4,64 @@ Id:             IHE.QRPH.QORE.EMS.Quality.Data.Resource.Bundle
 Title:          "QORE EMS Quality Data Resource Bundle"
 Description:    "The FHIR Resources that SHOULD be present to calculate EMS Quality Measures."
 
-* entry ^slicing.discriminator.type = #pattern
-* entry ^slicing.discriminator.path = "code"
-* entry ^slicing.rules = #open
-* entry ^slicing.description = "EMS Quality Data Resources"
-* entry ^slicing.ordered = false
-* entry contains 
-    patient 1..* MS and 
-    allergyIntolerances 0..* MS and 
-    procedures 0..* MS and 
-    MedicationHistory 0..* MS and 
-    medicationsAdministered 0..* MS and 
-    medicalHistory 0..* MS and 
-    diagnoses 1..* MS and 
-    diagnosticReport 1..1 MS and 
+
+* entry 1..* MS 
+
+//* entry ^slicing.discriminator.type = #pattern
+//* entry ^slicing.discriminator.path = "code"
+//* entry ^slicing.rules = #open
+//* entry ^slicing.description = "EMS Quality Data Resources"
+//* entry ^slicing.ordered = false
+//* entry contains 
+//    patient 1..* MS and 
+//    allergyIntolerances 0..* MS and 
+//    procedures 0..* MS and 
+//    MedicationHistory 0..* MS and 
+//    medicationsAdministered 0..* MS and 
+//    medicalHistory 0..* MS and 
+//    diagnoses 1..* MS and 
+//    diagnosticReport 1..1 MS and 
     // Note: overly contrained?
-    encounter 1..* MS and 
-    serviceRequest 0..* MS and 
-    vitalSigns 1..* MS and 
-    observations 1..* MS and 
-    condidiotns 1..* MS and 
-    locations 1..* MS and 
-    devices 0..* MS and 
-    ReferencedDocuments 0..* MS
+//    encounter 1..* MS and 
+//    serviceRequest 0..* MS and 
+//    vitalSigns 1..* MS and 
+//    observations 1..* MS and 
+//    condidiotns 1..* MS and 
+//    locations 1..* MS and 
+//    devices 0..* MS and 
+//    ReferencedDocuments 0..* MS
 
-* entry[patient].resource 1..1 MS Reference(PatientUvIps)
+//* entry[patient].resource 1..1 MS Reference(PatientUvIps)
 
-* entry[allergyIntolerances].resource 1..1 MS Reference(AllergyIntoleranceUvIps)
+//* entry[allergyIntolerances].resource 1..1 MS Reference(AllergyIntoleranceUvIps)
 
-* entry[procedures].resource 1..1 MS Reference(ProcedureUvIps)
+//* entry[procedures].resource 1..1 MS Reference(ProcedureUvIps)
 
-* entry[MedicationHistory].resource 1..1 MS Reference(MedicationStatementIPS)
+//* entry[MedicationHistory].resource 1..1 MS Reference(MedicationStatementIPS)
 
-* entry[medicationsAdministered].resource 1..1 MS Reference(MedicationAdministration)
+//* entry[medicationsAdministered].resource 1..1 MS Reference(MedicationAdministration)
 
-* entry[medicalHistory].resource 1..1 MS Reference(ConditionUvIps)
+//* entry[medicalHistory].resource 1..1 MS Reference(ConditionUvIps)
 
-* entry[diagnoses].resource 1..1 MS Reference(ConditionUvIps)
+//* entry[diagnoses].resource 1..1 MS Reference(ConditionUvIps)
 
-* entry[diagnosticReport].resource 1..* MS Reference(DiagnosticReportUvIps or ObservationResultsUvIps)
+//* entry[diagnosticReport].resource 1..* MS Reference(DiagnosticReportUvIps or ObservationResultsUvIps)
 
-* entry[encounter].resource 1..1 MS Reference(Encounter)
+//* entry[encounter].resource 1..1 MS Reference(Encounter)
 
-* entry[serviceRequest].resource 1..1 MS Reference(ServiceRequest)
+//* entry[serviceRequest].resource 1..1 MS Reference(ServiceRequest)
 
-* entry[vitalSigns].resource 1..1 MS Reference(vitalsigns)
+//* entry[vitalSigns].resource 1..1 MS Reference(vitalsigns)
 
-* entry[observations].resource 1..1 MS Reference(Observation)
+//* entry[observations].resource 1..1 MS Reference(Observation)
 
-* entry[condidiotns].resource 1..1 MS Reference(ConditionUvIps)
+//* entry[condidiotns].resource 1..1 MS Reference(ConditionUvIps)
 
-* entry[locations].resource 1..1 MS Reference(Location)
+//* entry[locations].resource 1..1 MS Reference(Location)
 
-* entry[devices].resource 1..1 MS Reference(DeviceUseStatementUvIps)
+//* entry[devices].resource 1..1 MS Reference(DeviceUseStatementUvIps)
 
-* entry[ReferencedDocuments].resource 1..1 MS Reference(DocumentReference)
+//* entry[ReferencedDocuments].resource 1..1 MS Reference(DocumentReference)
 
 
 //    firstSystolicBloodPressureED 0..1 MS and 

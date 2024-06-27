@@ -33,9 +33,7 @@ Measure Report for the FHIR elements that are used to report the Qulaity Outcome
 
 * group MS 
 
-* evaluatedResource MS 
-* evaluatedResource only Reference(IHE_QRPH_QORE_EMS_Quality_Data_Resource_Bundle)
-
+* evaluatedResource MS
 
 Extension: Measures
 Id: Measures
