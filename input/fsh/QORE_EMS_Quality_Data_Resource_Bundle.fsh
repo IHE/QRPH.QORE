@@ -28,7 +28,7 @@ Description:    "The FHIR Resources that SHOULD be present to calculate EMS Qual
     devices 0..* MS and 
     ReferencedDocuments 0..* MS
 
-* entry[patient].resource 1..1 MS Reference(https://profiles.ihe.net/ITI/PDQm/StructureDefinition/IHE.PDQm.Patient)
+* entry[patient].resource 1..1 MS Reference(Patient)
 
 * entry[allergyIntolerances].resource 1..1 MS Reference(AllergyIntoleranceUvIps)
 
