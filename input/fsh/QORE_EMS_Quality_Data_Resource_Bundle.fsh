@@ -28,37 +28,37 @@ Description:    "The FHIR Resources that SHOULD be present to calculate EMS Qual
     devices 0..* MS and 
     ReferencedDocuments 0..* MS
 
-* entry[patient].resource 1..1 MS only Reference(https://profiles.ihe.net/ITI/PDQm/StructureDefinition/IHE.PDQm.Patient)
+* entry[patient].resource 1..1 MS Reference(https://profiles.ihe.net/ITI/PDQm/StructureDefinition/IHE.PDQm.Patient)
 
-* entry[allergyIntolerances].resource 1..1 MS only Reference(AllergyIntoleranceUvIps)
+* entry[allergyIntolerances].resource 1..1 MS Reference(AllergyIntoleranceUvIps)
 
-* entry[procedures].resource 1..1 MS only Reference(ProcedureUvIps)
+* entry[procedures].resource 1..1 MS Reference(ProcedureUvIps)
 
-* entry[MedicationHistory].resource 1..1 MS only Reference(MedicationStatementIPS)
+* entry[MedicationHistory].resource 1..1 MS Reference(MedicationStatementIPS)
 
-* entry[medicationsAdministered].resource 1..1 MS only Reference(MedicationAdministration)
+* entry[medicationsAdministered].resource 1..1 MS Reference(MedicationAdministration)
 
-* entry[medicalHistory].resource 1..1 MS only Reference(ConditionUvIps)
+* entry[medicalHistory].resource 1..1 MS Reference(ConditionUvIps)
 
-* entry[diagnoses].resource 1..1 MS only Reference(ConditionUvIps)
+* entry[diagnoses].resource 1..1 MS Reference(ConditionUvIps)
 
-* entry[diagnosticReport].resource 1..* MS only Reference(DiagnosticReportUvIps or ObservationResultsUvIps)
+* entry[diagnosticReport].resource 1..* MS Reference(DiagnosticReportUvIps or ObservationResultsUvIps)
 
-* entry[encounter].resource 1..1 MS only Reference(Encounter)
+* entry[encounter].resource 1..1 MS Reference(Encounter)
 
-* entry[serviceRequest].resource 1..1 MS only Reference(ServiceRequest)
+* entry[serviceRequest].resource 1..1 MS Reference(ServiceRequest)
 
-* entry[vitalSigns].resource 1..1 MS only Reference(vitalsigns)
+* entry[vitalSigns].resource 1..1 MS Reference(vitalsigns)
 
-* entry[observations].resource 1..1 MS only Reference(Observation)
+* entry[observations].resource 1..1 MS Reference(Observation)
 
-* entry[condidiotns].resource 1..1 MS only Reference(ConditionUvIps)
+* entry[condidiotns].resource 1..1 MS Reference(ConditionUvIps)
 
-* entry[locations].resource 1..1 MS only Reference(Location)
+* entry[locations].resource 1..1 MS Reference(Location)
 
-* entry[devices].resource 1..1 MS only Reference(DeviceUseStatementUvIps)
+* entry[devices].resource 1..1 MS Reference(DeviceUseStatementUvIps)
 
-* entry[ReferencedDocuments].resource 1..1 MS only Reference(DocumentReference)
+* entry[ReferencedDocuments].resource 1..1 MS Reference(DocumentReference)
 
 
 //    firstSystolicBloodPressureED 0..1 MS and 
