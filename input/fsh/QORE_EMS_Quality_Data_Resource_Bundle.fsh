@@ -1,5 +1,5 @@
 Profile:        IHE_QRPH_QORE_EMS_Quality_Data_Resource_Bundle 
-Parent:         Bundle
+Parent:         Composition
 Id:             IHE.QRPH.QORE.EMS.Quality.Data.Resource.Bundle 
 Title:          "QORE EMS Quality Data Resource Bundle"
 Description:    "The FHIR Resources that SHOULD be present to calculate EMS Quality Measures."
