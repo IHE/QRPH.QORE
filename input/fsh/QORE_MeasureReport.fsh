@@ -3,7 +3,7 @@ Parent: MeasureReport
 Id:             IHE.QRPH.QORE.MeasureReport
 Title: "Quality Outcomes Reorting for EMS Measure Report"
 Description:      """
-Measure Report for the FHIR elements that are used to report the Qulaity Outcomes.
+Measure Report for the FHIR elements that are used to report the Qulaity Outcomes.  
 - RE	[0..*]	MeasureReport.identifier
 - R		[1..1]	MeasureReport.type
 - R		[1..1]	MeasureReport.measure
