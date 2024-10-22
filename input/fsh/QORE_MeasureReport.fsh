@@ -34,4 +34,4 @@ Measure Report for the FHIR elements that are used to report the Qulaity Outcome
 * group MS 
 
 * evaluatedResource MS
-* evaluatedResource = Reference(Observation or Patient or MedicationStatement or Condition or Encounter or Location or DocumentReference or Device or DiagnosticReport or MedicationAdministration or AllergyIntolerance or Procedure or Patient or ClinicalImpression or observation-vitalsigns)
+* evaluatedResource only Reference(Observation or Patient or MedicationStatement or Condition or Encounter or Location or DocumentReference or Device or DiagnosticReport or MedicationAdministration or AllergyIntolerance or Procedure or Patient or ClinicalImpression or observation-vitalsigns)

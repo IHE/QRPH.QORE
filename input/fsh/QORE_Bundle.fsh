@@ -7,9 +7,8 @@ the FHIR Resources supporting the content for sending a QORE Registry Report. Th
 the following cardinalities follow the documentation in the QORE profile: 
 - R	[1..*]	QORE Measure Report(s)
 """
-* subject 1..1 MS 
-* title = "EMS Quality Measure Report" 
-* section 1..*
-* section.title = "QORE Measure Report(s)"
-* section.entry 1..*
-* section.entry only Reference(IHE_QRPH_QORE_MeasureReport)
+* type = #batch
+* timestamp MS 
+* entry 1..* MS 
+    * resource only Reference(IHE_QRPH_QORE_MeasureReport)
+// The Entry SHALL contain one or more of the Measures that are reported. 
