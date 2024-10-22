@@ -10,5 +10,5 @@ the following cardinalities follow the documentation in the QORE profile:
 * type = #batch
 * timestamp MS 
 * entry 1..* MS 
-    * resource only Reference(IHE_QRPH_QORE_MeasureReport)
+* entry.resource only Reference(IHE_QRPH_QORE_MeasureReport)
 // The Entry SHALL contain one or more of the Measures that are reported. 

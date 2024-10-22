@@ -25,7 +25,7 @@ Measure Report for the FHIR elements that are used to report the Qulaity Outcome
 * evaluatedResource 1..* MS 
 // Note: The evaluated resources May include the QORE EMS Quality Data Bundle
 
-* measures MS 
+* measure MS 
 
 * reporter MS 
 
