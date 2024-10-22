@@ -22,10 +22,10 @@ Measure Report for the FHIR elements that are used to report the Qulaity Outcome
 
 * period 1..1 MS 
 
-* evaluatedResource 1..*
+* evaluatedResource 1..* MS 
 // Note: The evaluated resources May include the QORE EMS Quality Data Bundle
 
-* extension contains Measures named measures 1..* MS 
+* measures MS 
 
 * reporter MS 
 
@@ -34,11 +34,3 @@ Measure Report for the FHIR elements that are used to report the Qulaity Outcome
 * group MS 
 
 * evaluatedResource MS
-
-Extension: Measures
-Id: Measures
-Title: "Measures"
-Description: "What measures were calculated and are being sent"
-* ^context[+].type = #element
-* ^context[=].expression = "Measures"
-* value[x] only Reference(Measure)
