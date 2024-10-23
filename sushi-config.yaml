@@ -22,11 +22,8 @@ jurisdiction: 'http://unstats.un.org/unsd/methods/m49/m49.htm#001'
 copyright: IHE http://www.ihe.net/Governance/#Intellectual_Property
 copyrightYear: 2021+
 releaseLabel: ci-build
-dependencies:
-  hl7.fhir.uv.ips: 1.1.0
-  ihe.pcc.pcs: 
-    id: ihepccpcs
-    version: current
+dependencies: none 
+
 
 parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
   path-resource:
